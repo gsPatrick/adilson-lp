@@ -1,5 +1,6 @@
 import Hero from "@/components/organisms/Hero/Hero";
 import Longevity from "@/components/organisms/Longevity/Longevity";
+import PatientCaseVideo from "@/components/organisms/PatientCaseVideo/PatientCaseVideo";
 import StaticBanner from "@/components/organisms/StaticBanner/StaticBanner";
 import Diseases from "@/components/organisms/Diseases/Diseases";
 import ServiceLocations from "@/components/organisms/ServiceLocations/ServiceLocations";
@@ -14,6 +15,7 @@ export default function Home() {
     <main>
       <Hero />
       <Longevity />
+      <PatientCaseVideo />
       <StaticBanner />
       <Diseases />
       <ServiceLocations />
