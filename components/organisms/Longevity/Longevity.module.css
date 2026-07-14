@@ -1,7 +1,7 @@
 .section {
   width: 100%;
   background-color: var(--color-bg-light);
-  padding: 120px 0;
+  padding: 50px 0; /* Reduced padding to fit within screen height */
   box-sizing: border-box;
 }
 
@@ -12,20 +12,19 @@
   padding: 0 40px;
   display: flex;
   flex-direction: column;
-  gap: 100px;
   box-sizing: border-box;
 }
 
 .row {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 60px;
+  justify-content: center;
+  gap: 50px;
   width: 100%;
 }
 
 .visualCol {
-  width: 48%;
+  width: 40%; /* Reduced width of visual column to allow taller content to fit screen */
   display: flex;
   justify-content: center;
 }
@@ -33,7 +32,8 @@
 .collageFrame {
   position: relative;
   width: 100%;
-  max-width: 480px;
+  max-width: 300px; /* Reduced width constraints so height fits screen perfectly */
+  aspect-ratio: 9 / 16; /* Maintained portrait aspect ratio */
   border-radius: 24px;
   overflow: hidden;
   box-shadow: 0 20px 45px rgba(68, 97, 95, 0.1);
@@ -43,17 +43,17 @@
 .collageVideo {
   display: block;
   width: 100%;
-  height: auto;
-  object-fit: contain;
+  height: 100%;
+  object-fit: cover;
 }
 
 /* Sound control toggle button */
 .muteButton {
   position: absolute;
-  bottom: 20px;
-  right: 20px;
-  width: 42px;
-  height: 42px;
+  bottom: 16px;
+  right: 16px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   background-color: rgba(26, 46, 45, 0.7);
   border: 1px solid rgba(255, 255, 255, 0.25);
@@ -79,18 +79,18 @@
 }
 
 .textCol {
-  width: 46%;
+  width: 50%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 24px;
+  gap: 20px;
 }
 
 .description {
   font-family: var(--font-family);
-  font-size: clamp(16px, 1.8vw, 19px);
+  font-size: clamp(15px, 1.6vw, 17.5px); /* Balanced font size */
   font-weight: 400;
-  line-height: 1.65;
+  line-height: 1.6;
   color: var(--color-primary-green);
   margin: 0;
   text-wrap: pretty;
@@ -101,9 +101,9 @@
   background: linear-gradient(270deg, rgb(68, 97, 95) 0%, rgb(124, 164, 161) 100%);
   border-radius: 5px;
   color: #ffffff;
-  padding: 16px 36px;
+  padding: 14px 32px;
   font-family: var(--font-family);
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.5px;
@@ -123,27 +123,30 @@
 
 @media (max-width: 900px) {
   .section {
-    padding: 60px 0;
+    padding: 40px 0;
   }
   
   .container {
     padding: 0 24px;
-    gap: 60px;
   }
   
   .row {
     flex-direction: column;
-    gap: 32px;
+    gap: 24px;
   }
   
   .visualCol, .textCol {
     width: 100%;
   }
 
+  .collageFrame {
+    max-width: 260px;
+  }
+
   .muteButton {
-    bottom: 16px;
-    right: 16px;
-    width: 38px;
-    height: 38px;
+    bottom: 12px;
+    right: 12px;
+    width: 36px;
+    height: 36px;
   }
 }
