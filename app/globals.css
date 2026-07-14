@@ -1,0 +1,41 @@
+:root {
+  --color-primary-green: #44615F;
+  --color-accent-green: #7CA4A1;
+  --color-accent-gold: #78624E;
+  --color-bg-light: #ffffff;
+  
+  --container-max-width: 1280px;
+  --font-family: var(--font-montserrat), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+}
+
+body {
+  font-family: var(--font-family);
+  color: var(--color-primary-green);
+  background-color: var(--color-bg-light);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+

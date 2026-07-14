@@ -1,0 +1,188 @@
+/* ── TransformLife.module.css ─────────────────────────────────────────
+   Premium accordion list with:
+   - Header centered
+   - Accordion item with horizontal SVG heartbeat pulse line
+   - Grid-rows auto-height transition
+────────────────────────────────────────────────────────────────── */
+
+.section {
+  width: 100%;
+  background-color: #f7f7f5; /* bone contrast background */
+  padding: clamp(80px, 10vw, 120px) 0;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 clamp(20px, 4vw, 48px);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(40px, 6vw, 60px);
+  box-sizing: border-box;
+}
+
+/* ── Header ─────────────────────────────────────────────────── */
+.header {
+  text-align: center;
+}
+
+.title {
+  font-family: var(--font-family);
+  font-size: clamp(24px, 3.2vw, 42px);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.022em;
+  color: #1a2e2d;
+  margin: 0;
+}
+
+/* ── Accordion List ─────────────────────────────────────────── */
+.accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* ── Accordion Item ─────────────────────────────────────────── */
+.item {
+  background: #ffffff;
+  border-radius: 12px;
+  border: 1px solid rgba(68, 97, 95, 0.06);
+  box-shadow: 
+    0 2px 4px rgba(0, 0, 0, 0.01),
+    0 10px 24px rgba(68, 97, 95, 0.04);
+  overflow: hidden;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.item:hover {
+  transform: translateY(-2px);
+  box-shadow: 
+    0 4px 8px rgba(0, 0, 0, 0.02),
+    0 16px 40px rgba(68, 97, 95, 0.1);
+}
+
+.itemOpen {
+  box-shadow: 
+    0 4px 8px rgba(0, 0, 0, 0.02),
+    0 16px 40px rgba(68, 97, 95, 0.12);
+}
+
+/* ── Trigger button ──────────────────────────────────────────── */
+.trigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 28px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+}
+
+.itemTitle {
+  font-family: var(--font-family);
+  font-size: clamp(16px, 1.8vw, 19px);
+  font-weight: 600;
+  color: #1a2e2d;
+  flex-shrink: 0;
+  transition: color 0.3s ease;
+}
+
+.itemOpen .itemTitle {
+  color: #44615f;
+}
+
+/* Heartbeat pulse wrapper - spans across the space */
+.heartbeatWrapper {
+  flex: 1;
+  margin: 0 40px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.heartbeat {
+  display: block;
+}
+
+/* ── Arrow button box on the right ──────────────────────────── */
+.icon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+  background: rgba(124, 164, 161, 0.12);
+  color: #44615f;
+  transition: background 0.3s ease, color 0.3s ease, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.itemOpen .icon {
+  background: #7ca4a1;
+  color: #ffffff;
+  transform: rotate(180deg);
+}
+
+/* ── Description panel ───────────────────────────────────────── */
+/* CSS grid transition for smooth reveal */
+.panel {
+  display: grid;
+  grid-template-rows: 1fr;
+  overflow: hidden;
+  transition: grid-template-rows 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.panel[hidden] {
+  display: grid;
+  grid-template-rows: 0fr;
+  visibility: hidden;
+}
+
+.panel[hidden] {
+  display: grid !important;
+}
+
+.description {
+  font-family: var(--font-family);
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.7;
+  color: #5d6767;
+  margin: 0;
+  padding: 0 28px 28px;
+  overflow: hidden;
+  min-height: 0;
+  text-wrap: pretty;
+}
+
+/* ── Responsive breakpoints ─────────────────────────────────── */
+@media (max-width: 900px) {
+  .trigger {
+    padding: 20px 24px;
+  }
+  
+  .heartbeatWrapper {
+    display: none; /* Hide horizontal heartbeat line on mobile for spacing */
+  }
+
+  .description {
+    padding: 0 24px 20px;
+  }
+}
+
+/* ── Motion reduction ────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .panel,
+  .icon,
+  .item {
+    transition: none;
+  }
+}

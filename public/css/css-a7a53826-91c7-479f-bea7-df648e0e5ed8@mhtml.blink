@@ -1,0 +1,3 @@
+@charset "utf-8";
+
+.joinchat { --ch: 142; --cs: 70%; --cl: 49%; --bw: 1; }

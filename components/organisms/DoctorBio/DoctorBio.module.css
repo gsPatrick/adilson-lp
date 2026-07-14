@@ -1,0 +1,181 @@
+/* ── DoctorBio.module.css ───────────────────────────────────────────
+   Recreation of original layout, elevated with premium variables:
+   - bioRow: grid layout (left portrait, right text copy)
+   - timelineGrid: 4 rounded card nodes with graduation icons
+   - progress line: segmented bars at the bottom
+────────────────────────────────────────────────────────────────── */
+
+.section {
+  width: 100%;
+  background-image: 
+    linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.96) 20%, rgba(255, 255, 255, 0.96) 80%, rgba(255, 255, 255, 0) 100%),
+    url("/images/bg-secao1-1.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center top;
+  padding: clamp(80px, 10vw, 120px) 0;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.container {
+  width: 100%;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 clamp(20px, 4vw, 48px);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(60px, 8vw, 100px);
+  box-sizing: border-box;
+}
+
+/* ── Bio Row ────────────────────────────────────────────────── */
+.bioRow {
+  display: block;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Copy Column */
+.copyCol {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.title {
+  font-family: var(--font-family);
+  font-size: clamp(28px, 4vw, 42px);
+  font-weight: 700;
+  color: var(--color-accent-gold, #78624e); /* Match original text branding color */
+  margin: 0;
+}
+
+.subtitle {
+  font-family: var(--font-family);
+  font-size: clamp(17px, 2.2vw, 22px);
+  font-weight: 600;
+  line-height: 1.4;
+  color: #4d5757;
+  margin: 0;
+}
+
+.storyText {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.storyText p {
+  font-family: var(--font-family);
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.75;
+  color: #7a8282;
+  margin: 0;
+  text-wrap: pretty;
+}
+
+/* ── Timeline Section ───────────────────────────────────────── */
+.timelineContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  width: 100%;
+  margin-top: 10px;
+}
+
+/* Grid for the 4 boxes */
+.timelineGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  width: 100%;
+}
+
+.timelineCard {
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  box-shadow: 
+    0 4px 6px rgba(0, 0, 0, 0.02),
+    0 12px 32px rgba(68, 97, 95, 0.08);
+  border: 1px solid rgba(68, 97, 95, 0.05);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.timelineCard:hover {
+  transform: translateY(-3px);
+  box-shadow: 
+    0 8px 16px rgba(0, 0, 0, 0.04),
+    0 16px 40px rgba(68, 97, 95, 0.14);
+}
+
+.iconWrapper {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gradIcon {
+  display: block;
+}
+
+.cardText {
+  font-family: var(--font-family);
+  font-size: 13.5px;
+  font-weight: 500;
+  line-height: 1.45;
+  color: #4d5757;
+  margin: 0;
+}
+
+/* ── Segmented Progress Bar ────────────────────────────────── */
+.progressBarWrapper {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  width: 100%;
+  height: 8px;
+  margin-top: 8px;
+}
+
+.progressBarSegment {
+  background-color: var(--color-accent-green, #7ca4a1);
+  border-radius: 4px;
+  height: 100%;
+}
+
+/* ── Responsive breakpoints ─────────────────────────────────── */
+@media (max-width: 900px) {
+  .bioRow {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .imageFrame {
+    max-width: 100%;
+  }
+
+  .timelineGrid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .progressBarWrapper {
+    display: none; /* Hide horizontal segmented bar on mobile stack */
+  }
+}
+
+/* ── Motion reduction ────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .timelineCard {
+    transition: none;
+  }
+}

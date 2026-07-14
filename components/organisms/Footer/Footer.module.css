@@ -1,0 +1,293 @@
+/* ── Footer.module.css ───────────────────────────────────────────────
+   GI-style footer: hero bg behind, dark overlay, large centered CTA,
+   hairline divider, bottom nav + social, copyright.
+────────────────────────────────────────────────────────────────── */
+
+.footer {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  /* Fallback bg color while image loads */
+  background-color: #1a2e2d;
+}
+
+/* Hero background image — same as Hero section */
+.bgLayer {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-image: url("/images/bg-secao1-1.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: left top;
+}
+
+/* Dark gradient overlay for text legibility */
+.bgOverlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    180deg,
+    rgba(10, 22, 21, 0.72) 0%,
+    rgba(10, 22, 21, 0.88) 50%,
+    rgba(10, 22, 21, 0.96) 100%
+  );
+}
+
+/* All content sits above overlays */
+.container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: clamp(80px, 10vw, 140px) clamp(20px, 4vw, 48px) clamp(40px, 5vw, 60px);
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  box-sizing: border-box;
+}
+
+/* ── Big CTA block ──────────────────────────────────────────── */
+.ctaBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 24px;
+  padding-bottom: clamp(60px, 8vw, 100px);
+}
+
+.eyebrow {
+  font-family: var(--font-family);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.5);
+  margin: 0;
+}
+
+.heading {
+  font-family: var(--font-family);
+  font-size: clamp(28px, 4.5vw, 56px);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+  color: #ffffff;
+  max-width: 22ch;
+  margin: 0;
+}
+
+.subText {
+  font-family: var(--font-family);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.62);
+  max-width: 46ch;
+  margin: 0;
+}
+
+.cta {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1.5px solid rgba(255, 255, 255, 0.4);
+  border-radius: 8px;
+  color: #ffffff;
+  text-decoration: none;
+  backdrop-filter: blur(12px);
+  transition: background 0.3s ease, border-color 0.3s ease,
+    transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cta:hover {
+  background: rgba(255, 255, 255, 0.22);
+  border-color: rgba(255, 255, 255, 0.7);
+  transform: translateY(-2px);
+}
+
+.ctaInner {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 18px 40px;
+  font-family: var(--font-family);
+  font-size: 17px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+
+/* ── Hairline divider ────────────────────────────────────────── */
+.divider {
+  width: 100%;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.1);
+  margin-bottom: 32px;
+}
+
+/* ── Bottom bar ──────────────────────────────────────────────── */
+.bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 40px;
+}
+
+/* Links Grid */
+.linksGrid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 30px;
+  margin-bottom: 60px;
+}
+
+.linksCol {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.colTitle {
+  font-family: var(--font-family);
+  font-size: 11.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #ffffff;
+  margin: 0;
+}
+
+.colList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.colLink {
+  font-family: var(--font-family);
+  font-size: 13px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.55);
+  text-decoration: none;
+  line-height: 1.4;
+  transition: color 0.2s ease;
+}
+
+.colLink:hover {
+  color: #7ca4a1;
+}
+
+/* ── Social buttons ──────────────────────────────────────────── */
+.social {
+  display: flex;
+  gap: 10px;
+}
+
+.socialBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.7);
+  transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+  backdrop-filter: blur(8px);
+}
+
+.socialBtn:hover {
+  background: rgba(255, 255, 255, 0.18);
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+/* ── Copyright & Credits ──────────────────────────────────────── */
+.bottomMeta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  text-align: center;
+}
+
+.copy {
+  font-family: var(--font-family);
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  color: rgba(255, 255, 255, 0.35);
+  margin: 0;
+}
+
+.developerCredits {
+  font-family: var(--font-family);
+  font-size: 11.5px;
+  color: rgba(255, 255, 255, 0.3);
+  margin: 0;
+}
+
+.devLink {
+  color: rgba(255, 255, 255, 0.45);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.devLink:hover {
+  color: #7ca4a1;
+}
+
+/* ── Desktop & Responsiveness ─────────────────────────────────── */
+@media (min-width: 768px) {
+  .bottom {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .bottomMeta {
+    align-items: flex-end;
+    text-align: right;
+  }
+}
+
+@media (max-width: 960px) {
+  .linksGrid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px 20px;
+  }
+}
+
+@media (max-width: 640px) {
+  .linksGrid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  
+  .linksCol {
+    align-items: center;
+    text-align: center;
+  }
+  
+  .colList {
+    align-items: center;
+  }
+}
+
+/* ── Reduced motion ─────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .cta,
+  .socialBtn {
+    transition: none;
+  }
+}
+

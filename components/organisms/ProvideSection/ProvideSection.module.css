@@ -1,0 +1,215 @@
+/* ── ProvideSection.module.css ────────────────────────────────────────
+   Editorial layout: 3 columns.
+   Left: services list in white rounded card.
+   Middle: doctor sitting portrait in clean rounded frame.
+   Right: checklist copy.
+────────────────────────────────────────────────────────────────── */
+
+.section {
+  width: 100%;
+  background-color: #ffffff;
+  padding: clamp(60px, 8vw, 100px) 0;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 100%;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 clamp(20px, 4vw, 48px);
+  display: grid;
+  grid-template-columns: 1fr 1.1fr 1.1fr;
+  gap: 40px;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+/* ── Left Column — Services Card ────────────────────────────── */
+.leftCol {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.servicesCard {
+  position: relative;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 32px 24px;
+  width: 100%;
+  border: 1px solid rgba(68, 97, 95, 0.08);
+  box-shadow: 
+    0 4px 6px rgba(0, 0, 0, 0.02),
+    0 16px 40px rgba(68, 97, 95, 0.08);
+  overflow: hidden;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.servicesCard:hover {
+  transform: translateY(-4px);
+}
+
+.cardGlow {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(124, 164, 161, 0.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.cardTitle {
+  font-family: var(--font-family);
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #44615f;
+  margin: 0 0 20px 0;
+}
+
+.servicesList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.serviceItem {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.arrowhead {
+  flex-shrink: 0;
+}
+
+.serviceText {
+  font-family: var(--font-family);
+  font-size: 15px;
+  font-weight: 500;
+  color: #4d5757;
+}
+
+/* ── Middle Column — Portrait Image ────────────────────────── */
+.middleCol {
+  display: flex;
+  justify-content: center;
+}
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 
+    0 10px 24px rgba(0, 0, 0, 0.06),
+    0 20px 48px rgba(68, 97, 95, 0.12);
+}
+
+.doctorImage {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.imageWrapper:hover .doctorImage {
+  transform: scale(1.03);
+}
+
+.imageOverlay {
+  position: absolute;
+  inset: 0;
+  border: 1px solid rgba(68, 97, 95, 0.1);
+  border-radius: 20px;
+  pointer-events: none;
+}
+
+/* ── Right Column — Benefits ───────────────────────────────── */
+.rightCol {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.title {
+  font-family: var(--font-family);
+  font-size: clamp(24px, 3.2vw, 36px);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: #1a2e2d;
+  margin: 0;
+}
+
+.benefitsList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.benefitItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.checkWrapper {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  background-color: rgba(124, 164, 161, 0.12);
+  color: #7ca4a1;
+  margin-top: 2px;
+}
+
+.check {
+  display: block;
+}
+
+.benefitText {
+  font-family: var(--font-family);
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #5d6767;
+}
+
+/* ── Responsive breakpoints ─────────────────────────────────── */
+@media (max-width: 900px) {
+  .container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .leftCol, .middleCol, .rightCol {
+    width: 100%;
+  }
+
+  .servicesCard {
+    max-width: 100%;
+  }
+
+  .imageWrapper {
+    max-width: 360px;
+  }
+}
+
+/* ── Motion reduction ────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .servicesCard,
+  .doctorImage {
+    transition: none;
+  }
+}

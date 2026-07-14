@@ -1,0 +1,101 @@
+/* ── CTASection.module.css ───────────────────────────────────────────
+   High-converting CTA scheduling banner.
+────────────────────────────────────────────────────────────────── */
+
+.section {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background-color: var(--color-primary-green, #44615f);
+  padding: clamp(80px, 10vw, 140px) 0;
+  box-sizing: border-box;
+}
+
+/* Background image wave texture */
+.bgLayer {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-image: url("/images/bg_verde.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  opacity: 0.65;
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 clamp(20px, 4vw, 48px);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  box-sizing: border-box;
+}
+
+.eyebrow {
+  font-family: var(--font-family);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.title {
+  font-family: var(--font-family);
+  font-size: clamp(26px, 3.8vw, 44px);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+  margin: 0;
+  text-wrap: balance;
+}
+
+.description {
+  font-family: var(--font-family);
+  font-size: clamp(15px, 1.8vw, 17px);
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0 0 16px 0;
+  max-width: 58ch;
+  text-wrap: pretty;
+}
+
+.ctaButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background-color: #25d366; /* WhatsApp green */
+  color: #ffffff;
+  padding: 16px 36px;
+  border-radius: 9999px;
+  font-family: var(--font-family);
+  font-size: 15px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  box-shadow: 0 10px 30px rgba(37, 211, 102, 0.25);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.3s ease;
+}
+
+.ctaButton:hover {
+  transform: translateY(-2px);
+  background-color: #20ba59;
+  box-shadow: 0 16px 40px rgba(37, 211, 102, 0.4);
+}
+
+/* ── Motion reduction ────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .ctaButton {
+    transition: none;
+  }
+  .ctaButton:hover {
+    transform: none;
+  }
+}

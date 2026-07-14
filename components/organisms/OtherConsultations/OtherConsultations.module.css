@@ -1,0 +1,189 @@
+/* ── OtherConsultations.module.css ────────────────────────────────────
+   Static grid layout for other consulting topics.
+   Displays 3 columns centered without any scroll locking.
+────────────────────────────────────────────────────────────────── */
+
+.section {
+  width: 100%;
+  background-color: #f3f7f6; /* Soft green-grey light canvas */
+  padding: clamp(60px, 8vw, 100px) 0;
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: var(--container-max-width, 1280px);
+  margin: 0 auto;
+  padding: 0 clamp(20px, 4vw, 48px);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(40px, 6vw, 60px);
+  box-sizing: border-box;
+}
+
+.header {
+  max-width: 720px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.eyebrow {
+  display: inline-block;
+  font-family: var(--font-family);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--color-accent-green, #7ca4a1);
+}
+
+.title {
+  font-family: var(--font-family);
+  font-size: clamp(24px, 3.6vw, 40px);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--color-primary-green, #44615f);
+  margin: 0;
+}
+
+.lead {
+  font-family: var(--font-family);
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #556262;
+  margin: 0;
+}
+
+/* ── Cards Grid ────────────────────────────────────────────── */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Card design */
+.card {
+  background: #ffffff;
+  border: 1px solid rgba(68, 97, 95, 0.08);
+  border-radius: 20px;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 280px;
+  box-shadow: 0 10px 30px rgba(10, 22, 21, 0.04);
+  box-sizing: border-box;
+  transition: border-color 0.4s ease, box-shadow 0.4s ease, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card:hover {
+  border-color: rgba(124, 164, 161, 0.35);
+  transform: translateY(-4px);
+  box-shadow: 
+    0 16px 32px rgba(10, 22, 21, 0.06),
+    0 32px 70px rgba(10, 22, 21, 0.1);
+}
+
+.currentCard {
+  border-color: rgba(124, 164, 161, 0.5);
+  background-color: #fbfcfa;
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.cardLabel {
+  font-family: var(--font-family);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-accent-green, #7ca4a1);
+}
+
+.currentBadge {
+  font-family: var(--font-family);
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #44615f;
+  background: rgba(68, 97, 95, 0.08);
+  padding: 4px 10px;
+  border-radius: 9999px;
+}
+
+.cardBody {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex-grow: 1;
+}
+
+.cardTitle {
+  font-family: var(--font-family);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--color-primary-green, #44615f);
+  margin: 0;
+}
+
+.cardText {
+  font-family: var(--font-family);
+  font-size: 14px;
+  line-height: 1.6;
+  color: #556262;
+  margin: 0 0 20px 0;
+}
+
+/* Footer link detail */
+.cardFooter {
+  display: flex;
+  align-items: center;
+  border-top: 1px solid rgba(68, 97, 95, 0.08);
+  padding-top: 18px;
+  margin-top: auto;
+}
+
+.link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-family);
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--color-primary-green, #44615f);
+  transition: color 0.3s ease;
+}
+
+.link:hover {
+  color: var(--color-accent-green, #7ca4a1);
+}
+
+.currentLinkText {
+  font-family: var(--font-family);
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #7a8282;
+}
+
+/* Responsiveness overrides */
+@media (max-width: 960px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .card {
+    min-height: 260px;
+    padding: 24px;
+  }
+}

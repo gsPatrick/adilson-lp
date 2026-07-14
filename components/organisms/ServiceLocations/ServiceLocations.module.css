@@ -1,0 +1,199 @@
+.section {
+  width: 100%;
+  padding: clamp(80px, 10vw, 130px) 0;
+  background: #ffffff;
+}
+
+.container {
+  max-width: var(--container-max-width, 1280px);
+  margin: 0 auto;
+  padding: 0 clamp(20px, 4vw, 48px);
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  box-sizing: border-box;
+}
+
+/* ── Header ─────────────────────────────────────────── */
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 16px;
+}
+
+.eyebrow {
+  font-family: var(--font-family);
+  font-size: 11.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  color: var(--color-accent-gold, #c5a880);
+}
+
+.title {
+  font-family: var(--font-family);
+  font-size: clamp(32px, 4.5vw, 54px);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  color: var(--color-primary-green, #44615f);
+  margin: 0;
+}
+
+.titleEm {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--color-primary-green, #44615f);
+}
+
+.lead {
+  font-family: var(--font-family);
+  font-size: clamp(15px, 1.5vw, 17px);
+  line-height: 1.65;
+  color: #667b79;
+  max-width: 580px;
+  margin: 0;
+}
+
+/* ── Grid ─────────────────────────────────────────── */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ── Card ─────────────────────────────────────────── */
+.card {
+  display: flex;
+  gap: 20px;
+  padding: 28px 32px;
+  background: #f8faf9;
+  border: 1px solid rgba(68, 97, 95, 0.08);
+  border-radius: 20px;
+  text-decoration: none;
+  cursor: pointer;
+  position: relative;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.card:hover {
+  border-color: rgba(68, 97, 95, 0.25);
+  box-shadow: 0 12px 36px rgba(10, 22, 21, 0.07);
+  transform: translateY(-3px);
+}
+
+.card:hover .cardArrow {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.cardArrow {
+  position: absolute;
+  right: 24px;
+  top: 50%;
+  transform: translateX(-6px) translateY(-50%);
+  opacity: 0;
+  color: var(--color-primary-green, #44615f);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.cardIconWrapper {
+  flex-shrink: 0;
+  width: 52px;
+  height: 52px;
+  background: rgba(68, 97, 95, 0.09);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary-green, #44615f);
+}
+
+.cardInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.cardType {
+  font-family: var(--font-family);
+  font-size: 10.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--color-accent-gold, #c5a880);
+}
+
+.cardCity {
+  font-family: var(--font-family);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--color-primary-green, #44615f);
+  margin: 0;
+  line-height: 1.2;
+}
+
+.cardState {
+  font-weight: 400;
+  font-size: 16px;
+  color: #667b79;
+}
+
+.cardDesc {
+  font-family: var(--font-family);
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: #667b79;
+  margin: 4px 0 8px;
+}
+
+.tagRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.tag {
+  font-family: var(--font-family);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--color-primary-green, #44615f);
+  background: rgba(68, 97, 95, 0.08);
+  border-radius: 9999px;
+  padding: 3px 10px;
+  letter-spacing: 0.3px;
+}
+
+/* ── CTA Row ─────────────────────────────────────────── */
+.ctaRow {
+  display: flex;
+  justify-content: center;
+}
+
+.ctaLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-family);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--color-primary-green, #44615f);
+  text-decoration: none;
+  border-bottom: 2px solid rgba(68, 97, 95, 0.25);
+  padding-bottom: 2px;
+  transition: color 0.3s ease, border-color 0.3s ease, gap 0.3s ease;
+}
+
+.ctaLink:hover {
+  color: var(--color-accent-gold, #c5a880);
+  border-color: var(--color-accent-gold, #c5a880);
+  gap: 14px;
+}

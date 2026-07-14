@@ -1,0 +1,158 @@
+/* ── medicina-personalizada.module.css ────────────────────────────────
+   Alternating sections for clinical technologies and exams.
+────────────────────────────────────────────────────────────────── */
+
+.main {
+  background-color: #fcfcfc;
+  color: #1a2e2d;
+}
+
+/* ── Content Section ────────────────────────────────────────── */
+.contentSection {
+  width: 100%;
+  padding: clamp(60px, 8vw, 100px) 0;
+  box-sizing: border-box;
+}
+
+.contentContainer {
+  max-width: var(--container-max-width, 1280px);
+  margin: 0 auto;
+  padding: 0 clamp(20px, 4vw, 48px);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(80px, 12vw, 140px); /* Generous spacing between technologies */
+  box-sizing: border-box;
+}
+
+/* Reusable Alternating block styles */
+.techBlock {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(40px, 6vw, 80px);
+  align-items: center;
+}
+
+.reverse {
+  direction: rtl;
+}
+
+.reverse > * {
+  direction: ltr; /* Reset text direction for content columns */
+}
+
+.textCol {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.eyebrow {
+  font-family: var(--font-family);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--color-accent-green, #7ca4a1);
+}
+
+.blockTitle {
+  font-family: var(--font-family);
+  font-size: clamp(26px, 3.5vw, 38px);
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--color-primary-green, #44615f);
+  margin: 0;
+}
+
+.paragraph {
+  font-family: var(--font-family);
+  font-size: 16px;
+  line-height: 1.7;
+  color: #4d5757;
+  margin: 0;
+}
+
+/* Check list specific to exam indications */
+.listContainer {
+  margin-top: 10px;
+}
+
+.listTitle {
+  font-family: var(--font-family);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--color-primary-green, #44615f);
+  margin-bottom: 12px;
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.listItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-family: var(--font-family);
+  font-size: 14.5px;
+  line-height: 1.45;
+  color: #4d5757;
+}
+
+.checkIcon {
+  color: var(--color-accent-green, #7ca4a1);
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+/* Feature placeholder visuals */
+.visualCol {
+  width: 100%;
+}
+
+.visualBox {
+  width: 100%;
+  border-radius: 24px;
+  box-shadow: 0 16px 40px rgba(10, 22, 21, 0.05);
+  aspect-ratio: 4 / 3;
+  background: linear-gradient(135deg, #f2f7f6 0%, #e2eeec 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  color: #7ca4a1;
+}
+
+.visualLabel {
+  font-family: var(--font-family);
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Responsiveness overrides */
+@media (max-width: 900px) {
+  .techBlock {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .reverse {
+    direction: ltr;
+  }
+  
+  .visualCol {
+    order: -1; /* Display visual on top on mobile */
+  }
+
+  .contentContainer {
+    gap: 80px; /* Tighter padding for mobile scroll */
+  }
+}

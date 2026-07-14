@@ -1,0 +1,27 @@
+@charset "utf-8";
+
+.elementor-kit-5 { --e-global-color-primary: #6EC1E4; --e-global-color-secondary: #54595F; --e-global-color-text: #7A7A7A; --e-global-color-accent: #61CE70; --e-global-color-bd2e93b: #806B58; --e-global-color-b45a972: #ADC6C4; --e-global-color-738382f: #D0D9D6; --e-global-color-2ec301d: #E2D0A6; --e-global-typography-primary-font-family: "Roboto"; --e-global-typography-primary-font-weight: 600; --e-global-typography-secondary-font-family: "Roboto Slab"; --e-global-typography-secondary-font-weight: 400; --e-global-typography-text-font-family: "Roboto"; --e-global-typography-text-font-weight: 400; --e-global-typography-accent-font-family: "Roboto"; --e-global-typography-accent-font-weight: 500; --e-global-typography-2147eea-font-family: "Montserrat"; --e-global-typography-2147eea-font-size: 16px; --e-global-typography-2147eea-font-weight: 400; --e-global-typography-2147eea-line-height: 30.4px; --e-global-typography-45d4643-font-family: "Montserrat"; --e-global-typography-45d4643-font-size: 51px; --e-global-typography-45d4643-font-weight: 600; --e-global-typography-45d4643-line-height: 56.1px; }
+
+.elementor-kit-5 e-page-transition { background-color: rgb(255, 188, 125); }
+
+.elementor-section.elementor-section-boxed > .elementor-container { max-width: 1280px; }
+
+.e-con { --container-max-width: 1280px; --container-default-padding-top: 0px; --container-default-padding-right: 0px; --container-default-padding-bottom: 0px; --container-default-padding-left: 0px; }
+
+.elementor-widget:not(:last-child) { --kit-widget-spacing: 20px; }
+
+.elementor-element { --widgets-spacing: 20px 20px; --widgets-spacing-row: 20px; --widgets-spacing-column: 20px; }
+
+h1.entry-title { display: var(--page-title-display); }
+
+@media (max-width: 1024px) {
+  .elementor-kit-5 { --e-global-typography-2147eea-font-size: 15px; --e-global-typography-2147eea-line-height: 28.5px; --e-global-typography-45d4643-font-size: 47px; --e-global-typography-45d4643-line-height: 1.2em; }
+  .elementor-section.elementor-section-boxed > .elementor-container { max-width: 1024px; }
+  .e-con { --container-max-width: 1024px; }
+}
+
+@media (max-width: 767px) {
+  .elementor-kit-5 { --e-global-typography-2147eea-font-size: 14px; --e-global-typography-2147eea-line-height: 26.6px; --e-global-typography-45d4643-font-size: 29px; --e-global-typography-45d4643-line-height: 1.2em; }
+  .elementor-section.elementor-section-boxed > .elementor-container { max-width: 767px; }
+  .e-con { --container-max-width: 767px; }
+}

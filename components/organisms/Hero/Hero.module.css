@@ -1,0 +1,315 @@
+.heroSection {
+  position: relative;
+  background: transparent;
+  width: 100%;
+}
+
+/* Pinned background layer */
+.videoBg {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  z-index: 0;
+}
+
+/* Framed panel that snaps open on scroll */
+.frame {
+  position: absolute;
+  inset: 40px; /* Increased inset to make the hero look smaller and framed on load */
+  border-radius: 24px;
+  overflow: hidden;
+  will-change: inset, border-radius;
+  transition: inset 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+              border-radius 0.5s cubic-bezier(0.16, 1, 0.3, 1); /* Sped up to 0.5s */
+}
+
+.expandedFrame {
+  inset: 0;
+  border-radius: 0 !important;
+}
+
+.canvas {
+  position: absolute;
+  inset: 0;
+  background-image: url("/images/bg-secao1-1.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: left top; /* Keeps wave aligned to left */
+  /* Intro clip-path reveal on page load */
+  animation: introPanel 2.2s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes introPanel {
+  from {
+    clip-path: inset(48.5% 48.5% 48.5% 48.5% round 80px);
+  }
+  to {
+    clip-path: inset(0% 0% 0% 0% round 0px);
+  }
+}
+
+@keyframes introUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Content overlay pulled on top of sticky frame */
+.overlay {
+  position: relative;
+  z-index: 1;
+  margin-top: -100vh;
+}
+
+.containerInner {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: space-between;
+  width: 100%;
+  max-width: var(--container-max-width, 1280px);
+  margin: 0 auto;
+  padding: 0 40px 60px; /* Added 60px bottom padding to keep photo inside frame */
+  min-height: 100vh;
+  position: relative;
+  box-sizing: border-box;
+}
+
+/* Left column: Content */
+.contentCol {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-self: center;
+  width: 45%;
+  padding-top: 80px; /* Offset header height */
+  padding-bottom: 40px;
+  z-index: 2;
+  animation: introUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.5s both;
+}
+
+.logoWrapper {
+  margin: 0px 0px 30px 0px;
+  width: 253px;
+  max-width: 253px;
+  text-align: left;
+}
+
+.logoImage {
+  display: block;
+  height: auto;
+}
+
+.subtitleWrapper {
+  margin: 0px 0px 20px 0px;
+  align-self: flex-start;
+}
+
+.subtitle {
+  font-family: var(--font-family);
+  font-size: 19px;
+  font-weight: 400;
+  line-height: 28px;
+  letter-spacing: 1.2px;
+  color: var(--color-accent-gold);
+}
+
+.titleWrapper {
+  margin: 0px 0px 20px 0px;
+}
+
+.title {
+  font-family: var(--font-family);
+  font-size: 60px;
+  font-weight: 600;
+  line-height: 62px;
+  color: var(--color-primary-green);
+}
+
+.descriptionWrapper {
+  margin: 0px 0px 20px 0px;
+  width: 520px;
+  max-width: 520px;
+}
+
+.description {
+  font-family: var(--font-family);
+  font-size: 19px;
+  font-weight: 400;
+  line-height: 28px;
+  color: var(--color-primary-green);
+}
+
+.buttonWrapper {
+  margin-top: 10px;
+}
+
+.ctaButton {
+  display: inline-block;
+  background: linear-gradient(270deg, rgb(68, 97, 95) 0%, rgb(124, 164, 161) 100%);
+  border-radius: 5px;
+  color: #ffffff;
+  padding: 17px 35px 15px;
+  font-family: var(--font-family);
+  font-size: 18px;
+  font-weight: 400;
+  transition: opacity 0.3s ease;
+  text-decoration: none;
+}
+
+.ctaButton:hover {
+  opacity: 0.92;
+}
+
+/* Right column: Photo (desk aligned to bottom) */
+.photoCol {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-self: flex-end;
+  width: 55%;
+  z-index: 1;
+  position: relative;
+}
+
+.photoWrapper {
+  width: 100%;
+  max-width: 550px; /* Slightly reduced to balance columns and prevent header invasion */
+  align-self: flex-end;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  border-radius: 20px; /* Rounded corners on wrapper to clip straight image edges */
+  overflow: hidden; /* Clips straight corners */
+  box-shadow: 0 20px 40px rgba(68, 97, 95, 0.12); /* Subtle premium drop shadow */
+}
+
+.heroPhoto {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  max-height: 80vh; /* Constrains height to 80% of screen height to guarantee safe header gap */
+  object-fit: contain;
+  display: block;
+  animation: introUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.7s both;
+}
+
+
+/* Responsive styles */
+@media (max-width: 1024px) {
+  .frame {
+    inset: 12px;
+  }
+
+  .title {
+    font-size: 44px;
+    line-height: 48px;
+  }
+
+  .descriptionWrapper {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .photoCol {
+    width: 50%;
+  }
+
+  .contentCol {
+    width: 50%;
+  }
+}
+
+@media (max-width: 900px) {
+  .heroSection {
+    height: auto;
+  }
+
+  .videoBg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+  }
+
+  .frame {
+    inset: 12px;
+    border-radius: 16px;
+    will-change: inset, border-radius;
+    transition: inset 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+                border-radius 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .expandedFrame {
+    inset: 0 !important;
+    border-radius: 0 !important;
+  }
+
+  .overlay {
+    margin-top: 0;
+    min-height: auto; /* Reset desktop 130vh height on mobile */
+    padding-top: 80px;
+    padding-bottom: 40px;
+  }
+
+  .containerInner {
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: auto;
+    gap: 40px;
+  }
+
+  .contentCol {
+    width: 100%;
+    align-self: flex-start;
+    padding-top: 40px;
+    text-align: left;
+  }
+
+  .photoCol {
+    width: 100%;
+    height: auto;
+    align-self: center;
+    justify-content: center;
+  }
+
+  .photoWrapper {
+    align-self: center;
+    max-width: 480px;
+  }
+
+  .heroPhoto {
+    margin-bottom: 0;
+  }
+}
+
+/* ── Text-only centered Hero layout (when imageSrc is null) ── */
+.containerInner.noPhoto {
+  justify-content: center;
+}
+
+.containerInner.noPhoto .contentCol {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  align-items: center;
+}
+
+.containerInner.noPhoto .logoWrapper {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.containerInner.noPhoto .subtitleWrapper {
+  align-self: center;
+  text-align: center;
+}

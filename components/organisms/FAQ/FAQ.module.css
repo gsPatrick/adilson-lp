@@ -1,0 +1,207 @@
+/* ── FAQ.module.css ─────────────────────────────────────────────────
+   Editorial accordion — bone canvas, teal accent number, smooth
+   height animation via CSS grid trick, + cross→minus icon morph.
+────────────────────────────────────────────────────────────────── */
+
+.section {
+  width: 100%;
+  background-color: #ffffff;
+  padding: clamp(80px, 10vw, 160px) 0;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 100%;
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0 clamp(20px, 4vw, 48px);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(40px, 5vw, 64px);
+  box-sizing: border-box;
+}
+
+/* ── Header ─────────────────────────────────────────────────── */
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  text-align: center;
+}
+
+.eyebrow {
+  font-family: var(--font-family);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #44615f;
+  margin: 0;
+}
+
+.title {
+  font-family: var(--font-family);
+  font-size: clamp(28px, 3.6vw, 48px);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  color: #1a2e2d;
+  margin: 0;
+}
+
+.subtitle {
+  font-family: var(--font-family);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.65;
+  color: #6b7a7a;
+  margin: 0;
+  max-width: 48ch;
+}
+
+/* ── Accordion ──────────────────────────────────────────────── */
+.accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border-top: 1px solid rgba(68, 97, 95, 0.1);
+}
+
+/* ── Single item ─────────────────────────────────────────────── */
+.item {
+  border-bottom: 1px solid rgba(68, 97, 95, 0.1);
+  overflow: hidden;
+  transition: background 0.3s ease;
+}
+
+.item:hover {
+  background: rgba(68, 97, 95, 0.025);
+}
+
+.itemOpen {
+  background: rgba(68, 97, 95, 0.03);
+}
+
+/* ── Trigger button ──────────────────────────────────────────── */
+.trigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 24px 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  transition: padding 0.3s ease;
+}
+
+.itemOpen .trigger {
+  padding-bottom: 16px;
+}
+
+.questionNumber {
+  font-family: var(--font-family);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #44615f;
+  opacity: 0.6;
+  flex-shrink: 0;
+  width: 24px;
+  user-select: none;
+}
+
+.question {
+  font-family: var(--font-family);
+  font-size: clamp(16px, 1.8vw, 19px);
+  font-weight: 600;
+  line-height: 1.3;
+  color: #1a2e2d;
+  flex: 1;
+  transition: color 0.3s ease;
+}
+
+.itemOpen .question {
+  color: #44615f;
+}
+
+/* ── Plus/minus icon ─────────────────────────────────────────── */
+.icon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: rgba(68, 97, 95, 0.08);
+  color: #44615f;
+  transition: background 0.3s ease, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.itemOpen .icon {
+  background: #44615f;
+  color: #ffffff;
+}
+
+/* The horizontal bar fades out when open (turning + into −) */
+.iconHBar {
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  transform-origin: center;
+}
+
+.iconOpen .iconHBar {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+/* ── Answer panel ─────────────────────────────────────────────── */
+/* CSS grid trick for smooth height animation without JS */
+.panel {
+  display: grid;
+  grid-template-rows: 1fr;
+  overflow: hidden;
+  transition: grid-template-rows 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.panel[hidden] {
+  display: grid;
+  grid-template-rows: 0fr;
+  visibility: hidden;
+}
+
+/* Override default hidden display:none */
+.panel[hidden] {
+  display: grid !important;
+}
+
+.answer {
+  font-family: var(--font-family);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.75;
+  color: #4d5757;
+  margin: 0;
+  padding: 0 20px 28px calc(44px);  /* aligns with question text */
+  overflow: hidden;
+  min-height: 0;
+}
+
+/* ── Mobile ─────────────────────────────────────────────────── */
+@media (max-width: 640px) {
+  .trigger { gap: 14px; padding: 20px 16px; }
+  .questionNumber { display: none; }
+  .answer { padding: 0 16px 24px 16px; }
+}
+
+/* ── Reduced motion ─────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .panel,
+  .icon,
+  .iconHBar,
+  .item {
+    transition: none;
+  }
+}
