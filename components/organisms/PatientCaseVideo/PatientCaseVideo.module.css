@@ -1,7 +1,7 @@
 .section {
   width: 100%;
-  background-color: #2f4543; /* Dark green cinematic backdrop */
-  padding: clamp(80px, 8vw, 140px) 0;
+  background-color: #2f4543; /* Dark premium green backdrop */
+  padding: 120px 0;
   box-sizing: border-box;
 }
 
@@ -9,21 +9,80 @@
   width: 100%;
   max-width: var(--container-max-width, 1280px);
   margin: 0 auto;
-  padding: 0 clamp(20px, 4vw, 48px);
+  padding: 0 40px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 48px;
   box-sizing: border-box;
 }
 
-/* ── Header ─────────────────────────────────────────────────── */
-.header {
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+  width: 100%;
+}
+
+.visualCol {
+  width: 48%;
+  display: flex;
+  justify-content: center;
+}
+
+.collageFrame {
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.2);
+  background: #000000;
+}
+
+.collageVideo {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Sound control toggle button */
+.muteButton {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background-color: rgba(26, 46, 45, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: background-color 0.25s ease, transform 0.2s ease;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.muteButton:hover {
+  background-color: rgba(26, 46, 45, 0.85);
+  transform: scale(1.05);
+}
+
+.muteButton:active {
+  transform: scale(0.95);
+}
+
+.textCol {
+  width: 46%;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 12px;
-  text-align: center;
+  align-items: flex-start;
+  gap: 24px;
 }
 
 .eyebrow {
@@ -38,87 +97,47 @@
 
 .title {
   font-family: var(--font-family);
-  font-size: clamp(24px, 3.2vw, 38px);
+  font-size: clamp(26px, 3.6vw, 42px);
   font-weight: 700;
   line-height: 1.25;
   letter-spacing: -0.02em;
-  color: #ffffff;
-  max-width: 32ch;
+  color: #ffffff; /* White text on dark green */
   margin: 0;
 }
 
-.lead {
+.description {
   font-family: var(--font-family);
-  font-size: clamp(14px, 1.4vw, 16.5px);
-  line-height: 1.6;
-  color: rgba(255, 255, 255, 0.85);
-  max-width: 600px;
+  font-size: clamp(16px, 1.8vw, 19px);
+  font-weight: 400;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.88); /* Soft white */
   margin: 0;
+  text-wrap: pretty;
 }
 
-/* ── Video Card & Dimensions ─────────────────────────────────── */
-.videoWrapper {
-  width: 100%;
-  max-width: 480px; /* fit portrait and vertical layouts nicely */
-  display: flex;
-  justify-content: center;
-}
-
-.videoCard {
-  position: relative;
-  width: 100%;
-  border-radius: 24px;
-  overflow: hidden;
-  box-shadow: 0 24px 60px rgba(10, 22, 21, 0.25);
-  background: #000000;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.videoElement {
-  display: block;
-  width: 100%;
-  height: auto;
-  object-fit: contain;
-}
-
-/* Float mute overlay button */
-.muteButton {
-  position: absolute;
-  bottom: 24px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 12px 24px;
-  border-radius: 9999px;
-  background-color: rgba(26, 46, 45, 0.85);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+.ctaButton {
+  display: inline-block;
+  background: linear-gradient(270deg, rgb(68, 97, 95) 0%, rgb(124, 164, 161) 100%);
+  border-radius: 5px;
   color: #ffffff;
-  cursor: pointer;
-  z-index: 10;
-  transition: background-color 0.25s ease, transform 0.2s ease, box-shadow 0.25s ease;
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
-}
-
-.muteButton:hover {
-  background-color: rgb(26, 46, 45);
-  transform: translateX(-50%) scale(1.03);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
-}
-
-.muteButton:active {
-  transform: translateX(-50%) scale(0.97);
-}
-
-.btnLabel {
+  padding: 16px 36px;
   font-family: var(--font-family);
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.5px;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+
+.ctaButton:hover {
+  opacity: 0.9;
+}
+
+.buttonContent {
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
 @media (max-width: 900px) {
@@ -128,6 +147,21 @@
   
   .container {
     padding: 0 24px;
-    gap: 36px;
+  }
+  
+  .row {
+    flex-direction: column-reverse; /* Shows video on top on mobile screens */
+    gap: 32px;
+  }
+  
+  .visualCol, .textCol {
+    width: 100%;
+  }
+
+  .muteButton {
+    bottom: 16px;
+    right: 16px;
+    width: 38px;
+    height: 38px;
   }
 }
