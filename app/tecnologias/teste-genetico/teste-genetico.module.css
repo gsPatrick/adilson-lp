@@ -1,16 +1,12 @@
-/* ── teste-genetico.module.css ────────────────────────────────────────
-   Editorial layout with a technology grid showing DNA analysis areas.
-────────────────────────────────────────────────────────────────── */
-
 .main {
-  background-color: #fcfcfc;
+  background-color: #f7f7f5; /* bone premium backdrop */
   color: #1a2e2d;
 }
 
 /* ── Content Section ────────────────────────────────────────── */
 .contentSection {
   width: 100%;
-  padding: clamp(60px, 8vw, 100px) 0;
+  padding: clamp(60px, 8vw, 120px) 0;
   box-sizing: border-box;
 }
 
@@ -20,16 +16,17 @@
   padding: 0 clamp(20px, 4vw, 48px);
   display: flex;
   flex-direction: column;
-  gap: clamp(48px, 6vw, 80px);
+  gap: clamp(64px, 8vw, 110px);
   box-sizing: border-box;
 }
 
 /* Introduction Split Section */
 .introSplit {
-  display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: clamp(40px, 6vw, 80px);
-  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 .textCol {
@@ -40,152 +37,202 @@
 
 .eyebrow {
   font-family: var(--font-family);
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 700;
   letter-spacing: 2px;
   text-transform: uppercase;
-  color: var(--color-accent-green, #7ca4a1);
+  color: #c5a880; /* gold accent */
+  margin: 0;
 }
 
 .sectionTitle {
   font-family: var(--font-family);
-  font-size: clamp(28px, 3.5vw, 40px);
+  font-size: clamp(26px, 3.2vw, 38px);
   font-weight: 700;
-  line-height: 1.15;
+  line-height: 1.25;
   color: var(--color-primary-green, #44615f);
   margin: 0;
-  text-wrap: balance;
+  text-wrap: pretty;
 }
 
 .paragraph {
   font-family: var(--font-family);
   font-size: 16px;
   line-height: 1.7;
-  color: #4d5757;
+  color: #556262;
   margin: 0;
 }
 
 .highlightParagraph {
   font-family: var(--font-family);
   font-size: 18px;
-  font-weight: 500;
-  line-height: 1.75;
-  color: #44615f;
-  border-left: 2px solid #7ca4a1;
+  font-weight: 600;
+  line-height: 1.7;
+  color: var(--color-primary-green);
+  border-left: 3px solid #c5a880;
   padding-left: 20px;
   margin: 0;
 }
 
-/* Feature/Image Wrapper */
-.imageCol {
+/* ── Structured Products Section ────────────────────────────── */
+.productsSection {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
   width: 100%;
 }
 
-.imageWrapper {
-  position: relative;
-  width: 100%;
-  border-radius: 24px;
-  overflow: hidden;
-  box-shadow: 0 20px 48px rgba(10, 22, 21, 0.06);
-  aspect-ratio: 4 / 3;
-  background: linear-gradient(135deg, #eef5f4 0%, #d8e5e3 100%);
+.sectionHeader {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-}
-
-/* Modern DNA icon placeholder/illustration in CSS */
-.dnaIllustration {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  width: 80px;
-  color: #7ca4a1;
-}
-
-/* ── DNA Tech Grid ─────────────────────────────────────────── */
-.techSection {
-  display: flex;
-  flex-direction: column;
-  gap: clamp(32px, 5vw, 48px);
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-  width: 100%;
-  box-sizing: border-box;
-}
-
-.card {
-  background: #ffffff;
-  border: 1px solid rgba(68, 97, 95, 0.08);
-  border-radius: 20px;
-  padding: 28px;
-  display: flex;
-  flex-direction: column;
+  text-align: center;
   gap: 12px;
-  box-shadow: 0 10px 30px rgba(10, 22, 21, 0.03);
-  box-sizing: border-box;
-  transition: border-color 0.4s ease, box-shadow 0.4s ease, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.card:hover {
-  border-color: rgba(124, 164, 161, 0.35);
-  transform: translateY(-4px);
-  box-shadow: 
-    0 16px 32px rgba(10, 22, 21, 0.05),
-    0 32px 70px rgba(10, 22, 21, 0.08);
-}
-
-.cardIcon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  background-color: rgba(124, 164, 161, 0.1);
-  color: #7ca4a1;
-  flex-shrink: 0;
-}
-
-.cardTitle {
+.lead {
   font-family: var(--font-family);
-  font-size: 17px;
-  font-weight: 700;
-  color: var(--color-primary-green, #44615f);
+  font-size: 16px;
+  line-height: 1.6;
+  color: #667b79;
+  max-width: 680px;
   margin: 0;
 }
 
-.cardText {
+.productsList {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  width: 100%;
+}
+
+.productBlock {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 48px;
+  background: #ffffff;
+  border: 1px solid rgba(68, 97, 95, 0.08);
+  border-radius: 28px;
+  padding: 48px;
+  box-shadow: 0 16px 40px rgba(68, 97, 95, 0.03);
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.productText {
+  flex: 1.2;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.productBadge {
   font-family: var(--font-family);
-  font-size: 13.5px;
-  line-height: 1.5;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #c5a880;
+  background-color: rgba(197, 168, 128, 0.1);
+  padding: 6px 14px;
+  border-radius: 9999px;
+  display: inline-block;
+}
+
+.productTitle {
+  font-family: var(--font-family);
+  font-size: clamp(20px, 2.2vw, 26px);
+  font-weight: 700;
+  color: var(--color-primary-green);
+  margin: 0;
+  line-height: 1.35;
+}
+
+.productDesc {
+  font-family: var(--font-family);
+  font-size: 15px;
+  line-height: 1.65;
   color: #556262;
   margin: 0;
 }
 
-/* ── Responsiveness ────────────────────────────────────────── */
-@media (max-width: 960px) {
-  .introSplit {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-  
-  .imageCol {
-    order: -1;
-  }
-
-  .grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-  }
+.productFeatures {
+  list-style: none;
+  padding: 0;
+  margin: 8px 0 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
 }
 
-@media (max-width: 640px) {
-  .grid {
-    grid-template-columns: 1fr;
+.productFeatures li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-family: var(--font-family);
+  font-size: 14.5px;
+  line-height: 1.5;
+  color: var(--color-primary-green);
+  font-weight: 500;
+}
+
+.checkIcon {
+  color: #c5a880;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.productImageCol {
+  flex: 0.8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.productImg {
+  border-radius: 20px;
+  box-shadow: 0 12px 32px rgba(68, 97, 95, 0.08);
+  object-fit: cover;
+  width: 100%;
+  height: auto;
+  border: 1px solid rgba(68, 97, 95, 0.06);
+}
+
+/* Reverse block for visual dynamic alternations */
+.reverse {
+  flex-direction: row-reverse;
+}
+
+/* ── Responsiveness ────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .contentSection {
+    padding: 60px 0;
+  }
+
+  .contentContainer {
+    gap: 60px;
+  }
+
+  .productBlock {
+    flex-direction: column;
+    padding: 32px;
+    gap: 32px;
+  }
+
+  .productText {
+    order: 1;
+    width: 100%;
+  }
+
+  .productImageCol {
+    order: 0;
+    width: 100%;
+  }
+
+  .reverse {
+    flex-direction: column;
   }
 }

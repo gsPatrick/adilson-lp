@@ -180,12 +180,12 @@ export default function Header() {
               <ul className={styles.dropdownMenu}>
                 <li className={styles.dropdownItem}>
                   <Link href="/tecnologias/teste-genetico" className={styles.dropdownLink}>
-                    Testes Genéticos
+                    Teste Genético Preditivo
                   </Link>
                 </li>
                 <li className={styles.dropdownItem}>
                   <Link href="/tecnologias/medicina-personalizada#bioimpedancia" className={styles.dropdownLink}>
-                    Bioimpedância
+                    Bioimpedanciometria
                   </Link>
                 </li>
                 <li className={styles.dropdownItem}>

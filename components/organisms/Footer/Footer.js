@@ -100,8 +100,8 @@ export default function Footer() {
           <div className={styles.linksCol}>
             <h3 className={styles.colTitle}>Exames e Diagnósticos</h3>
             <ul className={styles.colList}>
-              <li><Link href="/tecnologias/teste-genetico" className={styles.colLink}>Testes Genéticos</Link></li>
-              <li><Link href="/tecnologias/medicina-personalizada#bioimpedancia" className={styles.colLink}>Bioimpedância</Link></li>
+              <li><Link href="/tecnologias/teste-genetico" className={styles.colLink}>Teste Genético Preditivo</Link></li>
+              <li><Link href="/tecnologias/medicina-personalizada#bioimpedancia" className={styles.colLink}>Bioimpedanciometria</Link></li>
               <li><Link href="/tecnologias/medicina-personalizada#polissonografia" className={styles.colLink}>Polissonografia Domiciliar</Link></li>
               <li><Link href="/tecnologias/medicina-personalizada#terapias" className={styles.colLink}>Terapias Injetáveis</Link></li>
               <li><Link href="/doencas/reposicao-hormonal" className={styles.colLink}>Reposição Hormonal</Link></li>
