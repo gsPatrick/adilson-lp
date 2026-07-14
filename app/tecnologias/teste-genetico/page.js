@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Hero from "@/components/organisms/Hero/Hero";
 import TransitionBanner from "@/components/organisms/TransitionBanner/TransitionBanner";
 import CTASection from "@/components/organisms/CTASection/CTASection";
@@ -26,6 +25,55 @@ function CheckIcon() {
       aria-hidden="true"
     >
       <polyline points="20 6 9 17 4 12" />
+    </svg>
+  );
+}
+
+function CancerDnaGraphic() {
+  return (
+    <svg width="180" height="240" viewBox="0 0 100 180" fill="none" className={styles.dnaSvg}>
+      <path d="M30 10 C30 50, 70 50, 70 90 C70 130, 30 130, 30 170" stroke="#44615f" strokeWidth="3" strokeLinecap="round" />
+      <path d="M70 10 C70 50, 30 50, 30 90 C30 130, 70 130, 70 170" stroke="#c5a880" strokeWidth="3" strokeLinecap="round" />
+      <line x1="33" y1="30" x2="67" y2="30" stroke="#c5a880" strokeWidth="2" strokeDasharray="3,3" />
+      <circle cx="50" cy="50" r="5" fill="#44615f" />
+      <line x1="33" y1="70" x2="67" y2="70" stroke="#44615f" strokeWidth="2" strokeDasharray="3,3" />
+      <line x1="30" y1="90" x2="70" y2="90" stroke="#c5a880" strokeWidth="2" />
+      <line x1="33" y1="110" x2="67" y2="110" stroke="#44615f" strokeWidth="2" strokeDasharray="3,3" />
+      <circle cx="50" cy="130" r="5" fill="#c5a880" />
+      <line x1="33" y1="150" x2="67" y2="150" stroke="#c5a880" strokeWidth="2" strokeDasharray="3,3" />
+    </svg>
+  );
+}
+
+function LifecodeGraphic() {
+  return (
+    <svg width="200" height="200" viewBox="0 0 100 100" fill="none" className={styles.dnaSvg}>
+      <circle cx="50" cy="50" r="35" stroke="#44615f" strokeWidth="3" strokeDasharray="6,4" />
+      <circle cx="50" cy="50" r="22" stroke="#c5a880" strokeWidth="2" />
+      <circle cx="50" cy="15" r="5" fill="#c5a880" />
+      <circle cx="50" cy="85" r="5" fill="#44615f" />
+      <circle cx="15" cy="50" r="5" fill="#44615f" />
+      <circle cx="85" cy="50" r="5" fill="#c5a880" />
+      <circle cx="27" cy="27" r="4" fill="#c5a880" />
+      <circle cx="73" cy="73" r="4" fill="#44615f" />
+      <line x1="50" y1="15" x2="50" y2="85" stroke="rgba(68, 97, 95, 0.2)" strokeWidth="1.5" />
+      <line x1="15" y1="50" x2="85" y2="50" stroke="rgba(68, 97, 95, 0.2)" strokeWidth="1.5" />
+    </svg>
+  );
+}
+
+function HypersensitivityGraphic() {
+  return (
+    <svg width="200" height="200" viewBox="0 0 100 100" fill="none" className={styles.dnaSvg}>
+      <path d="M30 25 L50 15 L70 25 L70 50 L50 60 L30 50 Z" stroke="#44615f" strokeWidth="3" strokeLinejoin="round" />
+      <path d="M50 60 L50 85" stroke="#c5a880" strokeWidth="2" strokeDasharray="3,3" />
+      <circle cx="30" cy="25" r="5" fill="#c5a880" />
+      <circle cx="70" cy="25" r="5" fill="#44615f" />
+      <circle cx="50" cy="15" r="5" fill="#44615f" />
+      <circle cx="70" cy="50" r="5" fill="#c5a880" />
+      <circle cx="30" cy="50" r="5" fill="#44615f" />
+      <circle cx="50" cy="60" r="6" fill="#c5a880" />
+      <circle cx="50" cy="85" r="6" fill="#44615f" />
     </svg>
   );
 }
@@ -119,13 +167,9 @@ export default function TesteGeneticoPage() {
                   </ul>
                 </div>
                 <div className={styles.productImageCol}>
-                  <Image
-                    src="/images/bioma-cancer.jpeg"
-                    alt="Kit Painel de Câncer Hereditário Bioma Genetics"
-                    width={400}
-                    height={300}
-                    className={styles.productImg}
-                  />
+                  <div className={styles.dnaVisualFrame}>
+                    <CancerDnaGraphic />
+                  </div>
                 </div>
               </div>
 
@@ -148,13 +192,9 @@ export default function TesteGeneticoPage() {
                   </ul>
                 </div>
                 <div className={styles.productImageCol}>
-                  <Image
-                    src="/images/bioma-lifecode.jpeg"
-                    alt="Kit LifeCode Bioma Genetics"
-                    width={400}
-                    height={300}
-                    className={styles.productImg}
-                  />
+                  <div className={styles.dnaVisualFrame}>
+                    <LifecodeGraphic />
+                  </div>
                 </div>
               </div>
 
@@ -176,13 +216,9 @@ export default function TesteGeneticoPage() {
                   </ul>
                 </div>
                 <div className={styles.productImageCol}>
-                  <Image
-                    src="/images/bioma-hipersensibilidade.jpeg"
-                    alt="Kit de Hipersensibilidade Alimentar Bioma Genetics"
-                    width={400}
-                    height={300}
-                    className={styles.productImg}
-                  />
+                  <div className={styles.dnaVisualFrame}>
+                    <HypersensitivityGraphic />
+                  </div>
                 </div>
               </div>
 

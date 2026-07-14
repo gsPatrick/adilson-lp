@@ -184,17 +184,17 @@ export default function Header() {
                   </Link>
                 </li>
                 <li className={styles.dropdownItem}>
-                  <Link href="/tecnologias/medicina-personalizada#bioimpedancia" className={styles.dropdownLink}>
+                  <Link href="/exames-e-diagnosticos#bioimpedancia" className={styles.dropdownLink}>
                     Bioimpedanciometria
                   </Link>
                 </li>
                 <li className={styles.dropdownItem}>
-                  <Link href="/tecnologias/medicina-personalizada#polissonografia" className={styles.dropdownLink}>
+                  <Link href="/exames-e-diagnosticos#polissonografia" className={styles.dropdownLink}>
                     Polissonografia Domiciliar
                   </Link>
                 </li>
                 <li className={styles.dropdownItem}>
-                  <Link href="/tecnologias/medicina-personalizada#terapias" className={styles.dropdownLink}>
+                  <Link href="/exames-e-diagnosticos#terapias" className={styles.dropdownLink}>
                     Terapias Injetáveis
                   </Link>
                 </li>
