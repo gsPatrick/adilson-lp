@@ -23,7 +23,7 @@ export default function Hero({
     </>
   ),
   description = "Cuidado especializado para adultos e idosos que desejam envelhecer com autonomia, força e qualidade de vida.",
-  imageSrc = "/images/Img-Dr.-Adilson-Silvestre-Intituto-Longe-Viver-.webp",
+  imageSrc = "/images/AD0035-683x1024.jpg.webp",
   showScrollytelling = true,
   scrollytellingStatements,
   scrollytellingLabel
