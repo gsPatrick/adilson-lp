@@ -58,12 +58,12 @@ export default function Header() {
 
             {/* Dropdown 2: Doenças Tratadas (Mega Dropdown Layout) */}
             <li className={`${styles.navItem} ${styles.hasDropdown} ${styles.megaNavItem}`}>
-              <span className={styles.navLink}>
+              <Link href="/doencas" className={styles.navLink}>
                 Doenças Tratadas
                 <svg className={styles.arrowIcon} viewBox="0 0 24 24" width="12" height="12">
                   <path fill="currentColor" d="M7 10l5 5 5-5H7z" />
                 </svg>
-              </span>
+              </Link>
               
               {/* Mega Dropdown Panel */}
               <div className={styles.megaDropdown}>
