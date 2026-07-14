@@ -28,7 +28,7 @@ export default function SobreMedicoPage() {
           </>
         }
         description="Conheça a trajetória profissional e a filosofia de atendimento do Dr. Adilson Silvestre, focada no envelhecimento ativo, na autonomia e na qualidade de vida."
-        imageSrc="/images/IMG-Dr.-Adilson-Silvestre.webp"
+        imageSrc="/images/dr-adilson-sobre.jpeg"
         showScrollytelling={false}
       />
       <DoctorBio />

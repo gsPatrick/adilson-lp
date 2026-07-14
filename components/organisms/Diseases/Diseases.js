@@ -1,63 +1,78 @@
-import Image from "next/image";
+import Link from "next/link";
 import styles from "./Diseases.module.css";
 
 const DISEASES = [
   {
-    id: "obesidade",
-    image: "/images/maca-verde.webp",
-    title: "Obesidade",
-    items: [
-      "Atividade física",
-      "Ganho de massa muscular",
-      "Acompanhamento nutricional",
-      "Fraqueza",
-      "Falta de apetite",
-    ],
+    slug: "alzheimer",
+    title: "Doença de Alzheimer",
+    description: "Prevenção, diagnóstico precoce e acompanhamento da principal causa de demência em idosos.",
   },
   {
-    id: "perda-de-memoria",
-    image: "/images/perda-de-memoria.webp",
+    slug: "sarcopenia",
+    title: "Sarcopenia (Perda de Músculo)",
+    description: "Tratamento especializado para perda progressiva e involuntária de força e massa muscular.",
+  },
+  {
+    slug: "osteoporose",
+    title: "Osteoporose",
+    description: "Prevenção ativa da perda mineral óssea para evitar fraturas, dores e perda de mobilidade.",
+  },
+  {
+    slug: "prevencao-quedas",
+    title: "Prevenção de Quedas",
+    description: "Avaliação da marcha, equilíbrio corporal e riscos estruturais do ambiente domiciliar.",
+  },
+  {
+    slug: "insonia",
+    title: "Insônia e Sono",
+    description: "Diagnóstico e tratamento de apneia obstrutiva, roncos e fragmentação do sono.",
+  },
+  {
+    slug: "ansiedade-depressao",
+    title: "Ansiedade e Depressão",
+    description: "Suporte especializado focado na saúde mental e equilíbrio emocional no envelhecimento.",
+  },
+  {
+    slug: "polifarmacia",
+    title: "Polifarmácia",
+    description: "Revisão e desprescrição de receitas com múltiplos medicamentos para evitar interações perigosas.",
+  },
+  {
+    slug: "perda-memoria",
     title: "Perda de Memória",
-    items: [
-      "Dor nas costas",
-      "Dor de cabeça",
-      "Queda",
-      "Pressão alta",
-      "Dores nos quadris e joelhos",
-    ],
+    description: "Investigação minuciosa do esquecimento para diferenciar envelhecimento natural de demência.",
   },
   {
-    id: "depressao",
-    image: "/images/depressao.webp",
-    title: "Depressão",
-    items: [
-      "Reabilitação de fratura de quadril",
-      "Reabilitação de sequela motora de AVC",
-      "Alzheimer",
-      "Parkinson",
-      "Atendimento especial em pessoas acamadas",
-    ],
+    slug: "demencia",
+    title: "Outras Demências",
+    description: "Diagnóstico e suporte para demência vascular, corpos de Lewy, frontotemporal e senil.",
+  },
+  {
+    slug: "diabetes",
+    title: "Diabetes Mellitus",
+    description: "Controle glicêmico coordenado para evitar complicações vasculares e renais em idosos.",
+  },
+  {
+    slug: "hipertensao",
+    title: "Hipertensão Arterial",
+    description: "Acompanhamento cardiovascular preventivo com foco na manutenção de vasos sanguíneos saudáveis.",
   },
 ];
 
-function CheckIcon() {
+function ArrowRightIcon() {
   return (
     <svg
-      viewBox="0 0 16 16"
-      width="16"
-      height="16"
+      width="14"
+      height="14"
+      viewBox="0 0 24 24"
       fill="none"
-      aria-hidden="true"
-      className={styles.checkIcon}
+      stroke="currentColor"
+      strokeWidth="2.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     >
-      <circle cx="8" cy="8" r="8" fill="rgba(68,97,95,0.12)" />
-      <path
-        d="M4.5 8.25L6.75 10.5L11.5 5.5"
-        stroke="#44615f"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
+      <line x1="5" y1="12" x2="19" y2="12" />
+      <polyline points="12 5 19 12 12 19" />
     </svg>
   );
 }
@@ -66,80 +81,39 @@ export default function Diseases() {
   return (
     <section className={styles.section} id="doencas-tratadas">
       <div className={styles.container}>
-
+        
         {/* Header */}
         <div className={styles.header}>
-          <p className={styles.eyebrow}>Quando Consultar</p>
+          <p className={styles.eyebrow}>Doenças Tratadas</p>
           <h2 className={styles.title}>
-            Se você tem algumas dessas doenças,{" "}
-            <em className={styles.titleAccent}>procure um médico geriatra</em>
+            Resumo das condições acompanhadas no consultório
           </h2>
+          <p className={styles.lead}>
+            Clique em cada uma para ver as informações detalhadas, formas de prevenção e tratamentos nas páginas internas.
+          </p>
         </div>
 
-        {/* Cards grid */}
+        {/* Grid of clean typographic cards */}
         <div className={styles.grid}>
           {DISEASES.map((disease) => (
-            <article key={disease.id} className={styles.card}>
-              {/* Photo */}
-              <div className={styles.photoWrap}>
-                <Image
-                  src={disease.image}
-                  alt={disease.title}
-                  fill
-                  className={styles.photo}
-                  sizes="(max-width: 768px) 100vw, 33vw"
-                />
-                <div className={styles.photoOverlay} aria-hidden="true" />
-              </div>
-
-              {/* Content */}
-              <div className={styles.cardBody}>
+            <Link
+              key={disease.slug}
+              href={`/doencas/${disease.slug}`}
+              className={styles.card}
+            >
+              <div className={styles.cardHeader}>
                 <h3 className={styles.cardTitle}>{disease.title}</h3>
-                <ul className={styles.list}>
-                  {disease.items.map((item) => (
-                    <li key={item} className={styles.listItem}>
-                      <CheckIcon />
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
               </div>
-            </article>
+              <p className={styles.cardDesc}>{disease.description}</p>
+              <div className={styles.cardLink}>
+                <span>Ver Detalhes</span>
+                <ArrowRightIcon />
+              </div>
+            </Link>
           ))}
-        </div>
-
-        {/* Footer CTA */}
-        <div className={styles.footer}>
-          <p className={styles.footerText}>
-            Se é uma pessoa saudável e quer ter uma velhice livre de doenças,
-            independente e cheia de energia e disposição, agende uma consulta
-            com o médico geriatra
-          </p>
-          <a
-            href="https://api.whatsapp.com/send?phone=5544997013040&text=Olá!%20Gostaria%20de%20agendar%20uma%20consulta."
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.cta}
-          >
-            <span className={styles.ctaInner}>
-              Agendar Consulta
-              <WhatsAppIcon />
-            </span>
-          </a>
         </div>
 
       </div>
     </section>
-  );
-}
-
-function WhatsAppIcon() {
-  return (
-    <svg viewBox="0 0 448 512" width="18" height="18" aria-hidden="true">
-      <path
-        fill="currentColor"
-        d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"
-      />
-    </svg>
   );
 }

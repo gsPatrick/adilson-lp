@@ -7,20 +7,26 @@ export default function Longevity() {
   return (
     <section className={styles.section}>
       <div className={styles.container}>
-
-        {/* Row 1: Image Left, Text Right */}
         <div className={styles.row}>
+          {/* Left Column: Single large doctor-patient image */}
           <div className={styles.visualCol}>
             <div className={styles.collageFrame}>
               <Image
-                src="/images/img1_secao22.webp"
-                alt="Envelhecimento Saudável"
-                width={571}
-                height={493}
+                src="/images/dr-adilson-paciente.webp"
+                alt="Dr. Adilson Silvestre no atendimento"
+                width={600}
+                height={480}
                 className={styles.collageImg}
+                fallbackSrc="/images/Img-Dr.-Adilson-Silvestre-Intituto-Longe-Viver-.webp"
+                // Adding custom styling error fallback in case file is not present yet
+                onError={(e) => {
+                  e.target.src = "/images/Img-Dr.-Adilson-Silvestre-Intituto-Longe-Viver-.webp";
+                }}
               />
             </div>
           </div>
+
+          {/* Right Column: Combined copy blocks into one continuous text block */}
           <div className={styles.textCol}>
             <p className={styles.description}>
               A verdade é que você vai envelhecer! E para ser uma pessoa
@@ -28,27 +34,7 @@ export default function Longevity() {
               comece o acompanhamento com o médico geriatra. Tenha você
               40, 50, 60 anos ou mais, o médico geriatra é o especialista
               que irá te acompanhar em todas as fases da vida a partir dos
-              40 anos.
-            </p>
-            <a
-              href="https://api.whatsapp.com/send?phone=5544997013040&text=Olá!%20Gostaria%20de%20agendar%20uma%20consulta."
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.ctaButton}
-            >
-              <span className={styles.buttonContent}>
-                Agendar Consulta
-                <WhatsAppIcon />
-              </span>
-            </a>
-          </div>
-        </div>
-
-        {/* Row 2: Text Left, Image Right */}
-        <div className={styles.row}>
-          <div className={styles.textCol}>
-            <p className={styles.description}>
-              Imagine chegar aos 80, 90 anos com independência, energia,
+              40 anos. Imagine chegar aos 80, 90 anos com independência, energia,
               sem depressão e ansiedade, tomando poucos ou nenhum
               medicamento e desfrutando da vida com mobilidade e saúde. O
               papel do médico geriatra é dar autonomia, qualidade de vida,
@@ -66,19 +52,7 @@ export default function Longevity() {
               </span>
             </a>
           </div>
-          <div className={styles.visualCol}>
-            <div className={styles.collageFrame}>
-              <Image
-                src="/images/group_6983-e1732196541412.webp"
-                alt="Autonomia e Qualidade de Vida"
-                width={572}
-                height={506}
-                className={styles.collageImg}
-              />
-            </div>
-          </div>
         </div>
-
       </div>
     </section>
   );

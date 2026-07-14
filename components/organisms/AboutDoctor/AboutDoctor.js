@@ -62,21 +62,22 @@ export default function AboutDoctor() {
 
           <div className={styles.bio}>
             <p>
-              Formado pela Universidade de Marília em 2011, o Dr. Adilson
-              Silvestre possui pós-graduação em Nutrologia pela ABRAN (2015),
-              Residência Médica em Clínica Médica (2020) e Residência Médica
-              em Geriatria (2022).
+              Me formei em Medicina pela Universidade de Marília em 2011. Desde o início da minha trajetória, sempre me fiz uma pergunta que mudou a forma como passei a enxergar a medicina: Cuidar da saúde deveria significar apenas tratar doenças?
             </p>
             <p>
-              Especialista em envelhecimento, geriatria e medicina preventiva,
-              o Dr. Adilson acredita que envelhecer bem é uma conquista que se
-              constrói com prevenção, acompanhamento médico individualizado e
-              qualidade de vida.
+              Durante a formação médica aprendemos profundamente sobre diagnóstico e tratamentos medicamentosos. A medicina é extremamente eficiente quando se trata de identificar doenças e prescrever medicamentos adequados. Mas com o tempo percebi que muitas pessoas continuavam sofrendo, mesmo quando estavam seguindo tratamentos corretos.
             </p>
             <p>
-              Com atuação em Maringá e Paranavaí, oferece consultas
-              ambulatoriais e domiciliares, sempre com foco na autonomia e
-              independência do paciente — independente da idade.
+              Foi então que comecei a compreender algo fundamental: a saúde vai muito além de remédios. Alimentação, atividade física, qualidade do sono, saúde emocional, espiritual e propósito de vida influenciam diretamente a forma como envelhecemos.
+            </p>
+            <p>
+              Ao longo de mais de 10 anos de estudos e experiência clínica, desenvolvi uma forma de atendimento baseada em algo essencial: aproximar o paciente do médico e envolver cada pessoa no próprio cuidado. Acredito que o melhor resultado acontece quando existe parceria. Meu papel é orientar, organizar o tratamento e oferecer conhecimento médico baseado em ciência. Mas a verdadeira transformação acontece quando o paciente entende o próprio tratamento e se compromete com o cuidado da sua saúde.
+            </p>
+            <p>
+              Atuo principalmente no acompanhamento de pessoas que desejam envelhecer com mais saúde, autonomia e qualidade de vida, além de pacientes que precisam de atenção especializada para condições comuns do envelhecimento. Também realizo acompanhamento clínico de pacientes que desejam utilizar medicações modernas para controle de peso com segurança e acompanhamento médico adequado.
+            </p>
+            <p>
+              Meu objetivo é oferecer uma medicina próxima, clara e individualizada, em que cada paciente se sinta compreendido e participe ativamente das decisões sobre sua saúde.
             </p>
           </div>
 

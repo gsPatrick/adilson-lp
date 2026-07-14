@@ -16,33 +16,14 @@
   z-index: 9999;
   box-shadow: 0 12px 30px rgba(68, 97, 95, 0.05);
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  padding: 0 6px 0 20px; /* Spaced to fit logo on left, CTA on right */
+  padding: 0 6px 0 28px; /* Spaced to fit items on left, CTA on right */
 }
 
 .headerContainer {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 24px;
+  gap: 28px;
   height: 100%;
-  width: 100%;
-}
-
-.logoWrapper {
-  display: flex;
-  align-items: center;
-  flex-shrink: 0;
-}
-
-.logoLink {
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-}
-
-.logoImage {
-  height: 28px; /* Compact height inside the 56px header */
-  width: auto;
 }
 
 /* Nav Menu Styles */

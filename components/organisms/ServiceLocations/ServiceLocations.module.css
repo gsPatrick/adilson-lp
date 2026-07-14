@@ -147,6 +147,14 @@
   color: #667b79;
 }
 
+.cardAddress {
+  font-family: var(--font-family);
+  font-size: 13.5px;
+  line-height: 1.45;
+  color: #44615f;
+  margin: 8px 0 10px;
+}
+
 .cardDesc {
   font-family: var(--font-family);
   font-size: 14.5px;

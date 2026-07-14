@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Hero from "@/components/organisms/Hero/Hero";
 import TransitionBanner from "@/components/organisms/TransitionBanner/TransitionBanner";
 import CTASection from "@/components/organisms/CTASection/CTASection";
@@ -157,10 +158,13 @@ export default function MedicinaPersonalizadaPage() {
             </div>
 
             <div className={styles.visualCol}>
-              <div className={styles.visualBox}>
-                <ScaleIcon />
-                <span className={styles.visualLabel}>Mapeamento de Massa Magra</span>
-              </div>
+              <Image
+                src="/images/body_composition_scale.png"
+                alt="Mapeamento de Massa Magra por Bioimpedanciometria"
+                width={480}
+                height={360}
+                className={styles.techImage}
+              />
             </div>
           </div>
 
@@ -194,10 +198,13 @@ export default function MedicinaPersonalizadaPage() {
             </div>
 
             <div className={styles.visualCol}>
-              <div className={styles.visualBox}>
-                <SleepIcon />
-                <span className={styles.visualLabel}>Avaliação de Oxigenação</span>
-              </div>
+              <Image
+                src="/images/exame-sono.png"
+                alt="Avaliação de Oxigenação e Exame do Sono Domiciliar"
+                width={480}
+                height={360}
+                className={styles.techImage}
+              />
             </div>
           </div>
 
@@ -231,10 +238,13 @@ export default function MedicinaPersonalizadaPage() {
             </div>
 
             <div className={styles.visualCol}>
-              <div className={styles.visualBox}>
-                <TherapyIcon />
-                <span className={styles.visualLabel}>Suporte Nutricional Rápido</span>
-              </div>
+              <Image
+                src="/images/terapias-injetaveis.png"
+                alt="Suporte Nutricional Rápido e Terapias Injetáveis"
+                width={480}
+                height={360}
+                className={styles.techImage}
+              />
             </div>
           </div>
 

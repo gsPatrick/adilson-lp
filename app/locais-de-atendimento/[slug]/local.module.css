@@ -49,6 +49,14 @@
   font-size: 0.7em;
 }
 
+.introAddress {
+  font-family: var(--font-family);
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--color-primary-green, #44615f);
+  margin: 4px 0 0;
+}
+
 .introText {
   font-family: var(--font-family);
   font-size: clamp(15px, 1.5vw, 17.5px);

@@ -120,6 +120,14 @@
   margin: 0;
 }
 
+.locationAddress {
+  font-family: var(--font-family);
+  font-size: 14.5px;
+  line-height: 1.5;
+  color: #44615f;
+  margin: 8px 0 10px;
+}
+
 .locationBody {
   padding: 32px 40px 36px;
 }

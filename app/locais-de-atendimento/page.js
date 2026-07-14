@@ -31,6 +31,7 @@ const LOCATIONS = [
     city: "Maringá",
     state: "Paraná",
     type: "Consultório Presencial",
+    address: "Av. Humaitá, 452 - Zona 04, Maringá - PR",
     tagline: "Principal sede de atendimento",
     description:
       "O consultório de Maringá é a sede principal do Dr. Adilson Silvestre. Localizado em estrutura confortável e acessível, oferece consultas individualizadas de longa duração (60 a 90 minutos) com avaliação geriátrica global completa, exame físico e a tecnologia de bioimpedanciometria in loco para medição precisa de composição corporal.",
@@ -52,6 +53,7 @@ const LOCATIONS = [
     city: "Paranavaí",
     state: "Paraná",
     type: "Consultório Presencial",
+    address: "Rua Pernambuco, 1205 - Centro, Paranavaí - PR",
     tagline: "Atendimento no interior do PR",
     description:
       "Reconhecendo a necessidade de acesso à geriatria especializada no interior do estado, o Dr. Adilson mantém agenda regular em Paranavaí, atendendo pacientes do Noroeste do Paraná que buscam acompanhamento médico de qualidade sem precisar se deslocar até a capital.",
@@ -75,7 +77,7 @@ const LOCATIONS = [
       "Para pacientes com limitações severas de mobilidade, acamados, em pós-operatório ou em cuidados paliativos, o Dr. Adilson realiza visitas médicas domiciliares com toda a estrutura necessária para uma avaliação geriátrica completa. O atendimento em casa reduz o estresse do deslocamento e permite uma avaliação do ambiente em que o paciente vive.",
     bullets: [
       "Indicado para pacientes acamados ou com cadeira de rodas",
-      "Avaliação do ambiente domiciliar e risco de quedas",
+      "Avaliação do ambiente domiciliar and risco de quedas",
       "Cuidados paliativos e suporte à família",
       "Revisão de medicamentos em domicílio",
       "Atendimento em Maringá e municípios próximos",
@@ -150,6 +152,11 @@ export default function ServiceLocationsPage() {
                     {loc.icon} {loc.city}
                     <span className={styles.locationState}> — {loc.state}</span>
                   </h2>
+                  {loc.address && (
+                    <p className={styles.locationAddress}>
+                      <strong>Endereço:</strong> {loc.address}
+                    </p>
+                  )}
                   <p className={styles.locationTagline}>{loc.tagline}</p>
                 </div>
               </div>

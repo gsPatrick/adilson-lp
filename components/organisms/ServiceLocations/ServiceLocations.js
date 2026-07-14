@@ -7,6 +7,7 @@ const LOCATIONS = [
     city: "Maringá",
     state: "PR",
     type: "Consultório Presencial",
+    address: "Av. Humaitá, 452 - Zona 04, Maringá - PR",
     description:
       "Consultas presenciais individualizadas com avaliação geriátrica global completa, exame físico detalhado e bioimpedanciometria.",
     tags: ["Consulta Presencial", "Avaliação Geriátrica", "Bioimpedanciometria"],
@@ -22,6 +23,7 @@ const LOCATIONS = [
     city: "Paranavaí",
     state: "PR",
     type: "Consultório Presencial",
+    address: "Rua Pernambuco, 1205 - Centro, Paranavaí - PR",
     description:
       "Atendimento no coração do interior paranaense. Agenda semanal com foco em geriatria preventiva para adultos maduros e idosos da região.",
     tags: ["Consulta Presencial", "Geriatria Preventiva", "Interior do PR"],
@@ -105,6 +107,11 @@ export default function ServiceLocations() {
                   {loc.city}
                   {loc.state && <span className={styles.cardState}> — {loc.state}</span>}
                 </h3>
+                {loc.address && (
+                  <p className={styles.cardAddress}>
+                    <strong>Endereço:</strong> {loc.address}
+                  </p>
+                )}
                 <p className={styles.cardDesc}>{loc.description}</p>
                 <div className={styles.tagRow}>
                   {loc.tags.map((tag, j) => (

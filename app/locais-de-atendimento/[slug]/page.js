@@ -9,6 +9,7 @@ const LOCATIONS_DATA = {
     city: "Maringá",
     state: "PR",
     type: "Consultório Presencial",
+    address: "Av. Humaitá, 452 - Zona 04, Maringá - PR",
     heroSubtitle: "Consultório em Maringá — PR",
     heroTitle: <>Geriatria presencial<br />em Maringá</>,
     heroDesc:
@@ -50,6 +51,7 @@ const LOCATIONS_DATA = {
     city: "Paranavaí",
     state: "PR",
     type: "Consultório Presencial",
+    address: "Rua Pernambuco, 1205 - Centro, Paranavaí - PR",
     heroSubtitle: "Consultório em Paranavaí — PR",
     heroTitle: <>Geriatria presencial<br />em Paranavaí</>,
     heroDesc:
@@ -202,6 +204,11 @@ export default async function LocationDetailPage({ params }) {
               {data.city}
               {data.state && <span className={styles.introState}> — {data.state}</span>}
             </h2>
+            {data.address && (
+              <p className={styles.introAddress}>
+                <strong>Endereço:</strong> {data.address}
+              </p>
+            )}
             <p className={styles.introText}>{data.intro}</p>
           </div>
         </div>

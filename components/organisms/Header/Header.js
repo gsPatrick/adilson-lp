@@ -14,17 +14,6 @@ export default function Header() {
   return (
     <header className={styles.header}>
       <div className={styles.headerContainer}>
-        {/* Brand Logo */}
-        <div className={styles.logoWrapper}>
-          <Link href="/" className={styles.logoLink}>
-            <img
-              src="/images/instituto_longeviver-logotipo_horizontal-fundo_transparente@5x-2.webp"
-              alt="Instituto Longeviver"
-              className={styles.logoImage}
-            />
-          </Link>
-        </div>
-
         {/* Navigation Menu */}
         <nav className={`${styles.nav} ${isMobileMenuOpen ? styles.navActive : ""}`}>
           <ul className={styles.navList}>
