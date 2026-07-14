@@ -5,69 +5,86 @@ const DISEASES = [
   {
     slug: "alzheimer",
     title: "Doença de Alzheimer",
+    description: "Prevenção, diagnóstico precoce e acompanhamento da principal causa de demência em idosos.",
   },
   {
     slug: "parkinson",
     title: "Doença de Parkinson",
+    description: "Diagnóstico neurológico, controle de tremores e rigidez para preservação da mobilidade.",
   },
   {
     slug: "sarcopenia",
-    title: "Sarcopenia (Perda de Músculo)",
+    title: "Sarcopenia",
+    description: "Tratamento especializado para perda progressiva e involuntária de força e massa muscular.",
   },
   {
     slug: "osteoporose",
     title: "Osteoporose",
+    description: "Fortalecimento da densidade mineral óssea para prevenir fraturas e perda de mobilidade.",
   },
   {
     slug: "prevencao-quedas",
-    title: "Prevenção de Quedas e Fraturas",
+    title: "Prevenção de Quedas",
+    description: "Avaliação do equilíbrio corporal e riscos estruturais no ambiente doméstico do paciente.",
   },
   {
     slug: "insonia",
-    title: "Insônia e Distúrbios do Sono",
+    title: "Insônia e Sono",
+    description: "Abordagem clínica e diagnóstico de apneia do sono e fragmentação do descanso noturno.",
   },
   {
     slug: "ansiedade-depressao",
     title: "Ansiedade e Depressão",
+    description: "Suporte especializado focado no equilíbrio emocional e na saúde mental durante o envelhecimento.",
   },
   {
     slug: "polifarmacia",
-    title: "Polifarmácia (Múltiplos Remédios)",
+    title: "Polifarmácia",
+    description: "Revisão e ajuste seguro de receitas com múltiplos medicamentos para evitar interações nocivas.",
   },
   {
     slug: "perda-memoria",
-    title: "Perda de Memória e Esquecimento",
+    title: "Perda de Memória",
+    description: "Investigação detalhada do esquecimento para diferenciar envelhecimento natural de demência.",
   },
   {
     slug: "demencia",
-    title: "Outras Demências (Vascular, Lewy, Senil)",
+    title: "Outras Demências",
+    description: "Diagnóstico e suporte integrado para demência vascular, corpos de Lewy, frontotemporal e senil.",
   },
   {
     slug: "diabetes",
     title: "Diabetes Mellitus",
+    description: "Controle glicêmico coordenado e preventivo para evitar complicações renais e vasculares.",
   },
   {
     slug: "hipertensao",
     title: "Hipertensão Arterial",
+    description: "Monitoramento e cuidado cardiovascular focado na longevidade e proteção dos vasos.",
   },
   {
     slug: "reposicao-hormonal",
-    title: "Rastreio e Reposição Hormonal",
+    title: "Reposição Hormonal",
+    description: "Avaliação criteriosa e reposição hormonal segura para controle de sintomas e bem-estar.",
+  },
+  {
+    slug: "emagrecimento",
+    title: "Plano de Emagrecimento",
+    description: "Abordagem multidisciplinar com nutricionista, bioimpedância e suporte metabólico focado.",
   },
 ];
 
-function ArrowIcon() {
+function ArrowRightIcon() {
   return (
     <svg
-      width="16"
-      height="16"
+      width="14"
+      height="14"
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
       strokeWidth="2.5"
       strokeLinecap="round"
       strokeLinejoin="round"
-      className={styles.itemArrow}
     >
       <line x1="5" y1="12" x2="19" y2="12" />
       <polyline points="12 5 19 12 12 19" />
@@ -80,48 +97,36 @@ export default function Diseases() {
     <section className={styles.section} id="doencas-tratadas">
       <div className={styles.container}>
         
-        {/* Section Header */}
+        {/* Header */}
         <div className={styles.header}>
-          <p className={styles.eyebrow}>Quando Consultar</p>
+          <p className={styles.eyebrow}>Quando Procurar um Geriatra</p>
           <h2 className={styles.title}>
             Se você tem algumas dessas doenças, <br />
             <em className={styles.titleAccent}>procure um médico geriatra</em>
           </h2>
-        </div>
-
-        {/* Written List Layout */}
-        <div className={styles.listWrapper}>
-          <ul className={styles.listGrid}>
-            {DISEASES.map((d) => (
-              <li key={d.slug} className={styles.listItem}>
-                <Link href={`/doencas/${d.slug}`} className={styles.listLink}>
-                  <span className={styles.bullet} />
-                  <span className={styles.diseaseName}>{d.title}</span>
-                  <ArrowIcon />
-                </Link>
-              </li>
-            ))}
-            {/* The final 'e muito mais' non-clickable visual placeholder */}
-            <li className={`${styles.listItem} ${styles.moreItem}`}>
-              <span className={styles.bulletMore} />
-              <span className={styles.moreText}>... e muito mais!</span>
-            </li>
-          </ul>
-        </div>
-
-        {/* Final Section CTA */}
-        <div className={styles.footerCTA}>
-          <p className={styles.footerLead}>
-            O geriatra realiza o acompanhamento integrado da saúde na longevidade, organizando receitas e prevenindo complicações.
+          <p className={styles.lead}>
+            Consulte as principais condições tratadas pelo Dr. Adilson Silvestre. Clique no card de cada doença para ver formas de prevenção e tratamentos nas páginas internas.
           </p>
-          <a
-            href="https://api.whatsapp.com/send?phone=5544997013040&text=Olá!%20Gostaria%20de%20agendar%20uma%20consulta."
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.ctaButton}
-          >
-            Agendar Consulta
-          </a>
+        </div>
+
+        {/* Grid of clean typographic cards */}
+        <div className={styles.grid}>
+          {DISEASES.map((disease) => (
+            <Link
+              key={disease.slug}
+              href={disease.slug === "emagrecimento" ? "/emagrecimento" : `/doencas/${disease.slug}`}
+              className={styles.card}
+            >
+              <div className={styles.cardHeader}>
+                <h3 className={styles.cardTitle}>{disease.title}</h3>
+              </div>
+              <p className={styles.cardDesc}>{disease.description}</p>
+              <div className={styles.cardLink}>
+                <span>Ver Detalhes</span>
+                <ArrowRightIcon />
+              </div>
+            </Link>
+          ))}
         </div>
 
       </div>
