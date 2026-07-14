@@ -40,25 +40,6 @@ export default function DoctorBio() {
     <section className={styles.section}>
       <div className={styles.container}>
         
-        {/* Bio Copy (no duplicate image since it is in the Hero) */}
-        <div className={styles.bioRow}>
-          <div className={styles.copyCol}>
-            <h2 className={styles.title}>Dr. Adilson Silvestre</h2>
-            <p className={styles.subtitle}>
-              Medicina e cuidados ao paciente como pontos principais para o sucesso dos tratamentos
-            </p>
-
-            <div className={styles.storyText}>
-              <p>
-                Após me formar na Universidade de Marília em 2011, concluí que a faculdade de Medicina pouco se ensinava em como cuidar do próximo. Noções como alimentação, atividade física e suas aplicações, não foram ensinadas na faculdade. Podem acreditar! Não foi gasto nem um minuto de uma formação médica nas orientações sobre alimentação ou atividade física, o que para mim beira a insanidade.
-              </p>
-              <p>
-                Também pouco foi ensinado sobre como se colocar no lugar do paciente, falar de forma que ele compreenda, fazer uma receita que conseguisse entender como tomar os medicamentos ou como falar sobre espiritualidade. Porém, no que se trata de diagnóstico de doenças e seus tratamentos medicamentosos, a escola de medicina é mestre, repletas de protocolos e dados de sensibilidade. No entanto, sempre me questionei: O cuidado médico não deveria ir além de tratar doenças?
-              </p>
-            </div>
-          </div>
-        </div>
-
         {/* Timeline block */}
         <div className={styles.timelineContainer}>
           {/* The 4 boxes */}

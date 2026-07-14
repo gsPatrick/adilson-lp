@@ -83,7 +83,7 @@ export default function ProvideSection() {
         <div className={styles.middleCol}>
           <div className={styles.imageWrapper}>
             <Image
-              src="/images/Img-Dr.-Adilson-Silvestre-Intituto-Longe-Viver-.webp"
+              src="/images/dr-adilson-sobre-desk.jpeg"
               alt="Dr. Adilson Silvestre no consultório"
               width={405}
               height={454}
