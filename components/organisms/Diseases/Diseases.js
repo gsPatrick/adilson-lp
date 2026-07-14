@@ -29,7 +29,7 @@ const DISEASES = [
   },
   {
     slug: "insonia",
-    title: "Insônia e Sono",
+    title: "Insônia e Distúrbios do Sono",
     description: "Abordagem clínica e diagnóstico de apneia do sono e fragmentação do descanso noturno.",
   },
   {

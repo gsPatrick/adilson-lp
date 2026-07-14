@@ -9,7 +9,7 @@ const LOCATIONS_DATA = {
     city: "Maringá",
     state: "PR",
     type: "Consultório Presencial",
-    address: "Av. Humaitá, 452 - Zona 04, Maringá - PR",
+    address: "R. Olímpio Totti, 38 Jardim Das Nações, Clinic Garden - Maringá - PR",
     heroSubtitle: "Consultório em Maringá — PR",
     heroTitle: <>Geriatria presencial<br />em Maringá</>,
     heroDesc:
@@ -51,7 +51,7 @@ const LOCATIONS_DATA = {
     city: "Paranavaí",
     state: "PR",
     type: "Consultório Presencial",
-    address: "Rua Pernambuco, 1205 - Centro, Paranavaí - PR",
+    address: "Rua Getúlio Vargas n455, Centro, Instituto Longeviver - Paranavaí-PR",
     heroSubtitle: "Consultório em Paranavaí — PR",
     heroTitle: <>Geriatria presencial<br />em Paranavaí</>,
     heroDesc:

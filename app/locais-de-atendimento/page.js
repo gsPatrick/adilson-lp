@@ -31,7 +31,7 @@ const LOCATIONS = [
     city: "Maringá",
     state: "Paraná",
     type: "Consultório Presencial",
-    address: "Av. Humaitá, 452 - Zona 04, Maringá - PR",
+    address: "R. Olímpio Totti, 38 Jardim Das Nações, Clinic Garden - Maringá - PR",
     tagline: "Principal sede de atendimento",
     description:
       "O consultório de Maringá é a sede principal do Dr. Adilson Silvestre. Localizado em estrutura confortável e acessível, oferece consultas individualizadas de longa duração (60 a 90 minutos) com avaliação geriátrica global completa, exame físico e a tecnologia de bioimpedanciometria in loco para medição precisa de composição corporal.",
@@ -53,7 +53,7 @@ const LOCATIONS = [
     city: "Paranavaí",
     state: "Paraná",
     type: "Consultório Presencial",
-    address: "Rua Pernambuco, 1205 - Centro, Paranavaí - PR",
+    address: "Rua Getúlio Vargas n455, Centro, Instituto Longeviver - Paranavaí-PR",
     tagline: "Atendimento no interior do PR",
     description:
       "Reconhecendo a necessidade de acesso à geriatria especializada no interior do estado, o Dr. Adilson mantém agenda regular em Paranavaí, atendendo pacientes do Noroeste do Paraná que buscam acompanhamento médico de qualidade sem precisar se deslocar até a capital.",
