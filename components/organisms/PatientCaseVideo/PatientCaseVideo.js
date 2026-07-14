@@ -22,13 +22,12 @@ export default function PatientCaseVideo() {
           {/* Left Column: Text content explaining the clinical case */}
           <div className={styles.textCol}>
             <p className={styles.eyebrow}>Estudo de Caso</p>
-            <h2 className={styles.title}>História Real de Reabilitação e Autonomia</h2>
+            <h2 className={styles.title}>Quando a escuta clínica conduz ao diagnóstico certo!</h2>
             <p className={styles.description}>
-              Neste relato, o Dr. Adilson Silvestre detalha a jornada de
-              reabilitação de um paciente que recuperou sua capacidade funcional
-              e independência no dia a dia. A geriatria vai além do diagnóstico:
-              ela atua de forma integrada para devolver a qualidade de vida, a
-              mobilidade e o prazer de viver ativamente.
+              Neste relato, o Dr. Adilson Silvestre apresenta a história de um paciente cujos sintomas exigiam uma avaliação cuidadosa e integral. A partir de uma escuta atenta e da investigação clínica adequada, foram solicitados exames que permitiram identificar, em tempo oportuno, uma obstrução em uma artéria coronária.
+            </p>
+            <p className={styles.description}>
+              Em conjunto com um médico cardiologista, foi conduzido o tratamento necessário, incluindo a realização de uma angioplastia. O caso demonstra como o olhar individualizado do geriatra, aliado ao trabalho integrado entre especialidades, pode contribuir para preservar a saúde, a autonomia e a qualidade de vida do paciente.
             </p>
             <a
               href="https://api.whatsapp.com/send?phone=5544997013040&text=Olá!%20Assisti%20ao%20vídeo%20do%20caso%20clínico%20e%20gostaria%20de%20agendar%20uma%20consulta."
