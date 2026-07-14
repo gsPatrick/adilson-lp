@@ -91,7 +91,7 @@ export default function TesteGeneticoPage() {
   return (
     <main className={styles.main}>
       <Hero
-        subtitle="Tecnologias"
+        subtitle="Exames e Diagnósticos"
         title={
           <>
             Teste Genético

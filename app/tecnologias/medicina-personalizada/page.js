@@ -71,7 +71,7 @@ export default function MedicinaPersonalizadaPage() {
   const bannerItems = [
     {
       number: "01",
-      title: "Exame do Sono",
+      title: "Polissonografia",
       description: "Diagnóstico e controle clínico da apneia obstrutiva do sono.",
     },
     {
@@ -110,7 +110,7 @@ export default function MedicinaPersonalizadaPage() {
   return (
     <main className={styles.main}>
       <Hero
-        subtitle="Tecnologias"
+        subtitle="Exames e Diagnósticos"
         title={
           <>
             Medicina
@@ -129,7 +129,7 @@ export default function MedicinaPersonalizadaPage() {
         <div className={styles.contentContainer}>
           
           {/* Block 1: Bioimpedanciometria */}
-          <div className={styles.techBlock}>
+          <div className={styles.techBlock} id="bioimpedancia">
             <div className={styles.textCol}>
               <span className={styles.eyebrow}>Composição Corporal</span>
               <h2 className={styles.blockTitle}>Exame de Bioimpedanciometria</h2>
@@ -168,11 +168,11 @@ export default function MedicinaPersonalizadaPage() {
             </div>
           </div>
 
-          {/* Block 2: Exame do Sono (Reversed) */}
-          <div className={`${styles.techBlock} ${styles.reverse}`}>
+          {/* Block 2: Polissonografia Domiciliar (Reversed) */}
+          <div className={`${styles.techBlock} ${styles.reverse}`} id="polissonografia">
             <div className={styles.textCol}>
               <span className={styles.eyebrow}>Saúde do Sono</span>
-              <h2 className={styles.blockTitle}>Exame do Sono (Apneia)</h2>
+              <h2 className={styles.blockTitle}>Polissonografia Domiciliar</h2>
               <p className={styles.paragraph}>
                 A apneia obstrutiva do sono ocorre quando há interrupções repetidas da respiração à
                 noite, reduzindo a oxigenação sanguínea e sobrecarregando o sistema cardiovascular. É uma
@@ -209,7 +209,7 @@ export default function MedicinaPersonalizadaPage() {
           </div>
 
           {/* Block 3: Terapias Injetáveis */}
-          <div className={styles.techBlock}>
+          <div className={styles.techBlock} id="terapias">
             <div className={styles.textCol}>
               <span className={styles.eyebrow}>Suplementação Biológica</span>
               <h2 className={styles.blockTitle}>Terapias Injetáveis</h2>

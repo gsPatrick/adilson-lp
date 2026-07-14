@@ -5,71 +5,69 @@ const DISEASES = [
   {
     slug: "alzheimer",
     title: "Doença de Alzheimer",
-    description: "Prevenção, diagnóstico precoce e acompanhamento da principal causa de demência em idosos.",
+  },
+  {
+    slug: "parkinson",
+    title: "Doença de Parkinson",
   },
   {
     slug: "sarcopenia",
     title: "Sarcopenia (Perda de Músculo)",
-    description: "Tratamento especializado para perda progressiva e involuntária de força e massa muscular.",
   },
   {
     slug: "osteoporose",
     title: "Osteoporose",
-    description: "Prevenção ativa da perda mineral óssea para evitar fraturas, dores e perda de mobilidade.",
   },
   {
     slug: "prevencao-quedas",
-    title: "Prevenção de Quedas",
-    description: "Avaliação da marcha, equilíbrio corporal e riscos estruturais do ambiente domiciliar.",
+    title: "Prevenção de Quedas e Fraturas",
   },
   {
     slug: "insonia",
-    title: "Insônia e Sono",
-    description: "Diagnóstico e tratamento de apneia obstrutiva, roncos e fragmentação do sono.",
+    title: "Insônia e Distúrbios do Sono",
   },
   {
     slug: "ansiedade-depressao",
     title: "Ansiedade e Depressão",
-    description: "Suporte especializado focado na saúde mental e equilíbrio emocional no envelhecimento.",
   },
   {
     slug: "polifarmacia",
-    title: "Polifarmácia",
-    description: "Revisão e desprescrição de receitas com múltiplos medicamentos para evitar interações perigosas.",
+    title: "Polifarmácia (Múltiplos Remédios)",
   },
   {
     slug: "perda-memoria",
-    title: "Perda de Memória",
-    description: "Investigação minuciosa do esquecimento para diferenciar envelhecimento natural de demência.",
+    title: "Perda de Memória e Esquecimento",
   },
   {
     slug: "demencia",
-    title: "Outras Demências",
-    description: "Diagnóstico e suporte para demência vascular, corpos de Lewy, frontotemporal e senil.",
+    title: "Outras Demências (Vascular, Lewy, Senil)",
   },
   {
     slug: "diabetes",
     title: "Diabetes Mellitus",
-    description: "Controle glicêmico coordenado para evitar complicações vasculares e renais em idosos.",
   },
   {
     slug: "hipertensao",
     title: "Hipertensão Arterial",
-    description: "Acompanhamento cardiovascular preventivo com foco na manutenção de vasos sanguíneos saudáveis.",
+  },
+  {
+    slug: "reposicao-hormonal",
+    title: "Rastreio e Reposição Hormonal",
   },
 ];
 
-function ArrowRightIcon() {
+function ArrowIcon() {
   return (
     <svg
-      width="14"
-      height="14"
+      width="16"
+      height="16"
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
       strokeWidth="2.5"
       strokeLinecap="round"
       strokeLinejoin="round"
+      className={styles.itemArrow}
     >
       <line x1="5" y1="12" x2="19" y2="12" />
       <polyline points="12 5 19 12 12 19" />
@@ -82,35 +80,48 @@ export default function Diseases() {
     <section className={styles.section} id="doencas-tratadas">
       <div className={styles.container}>
         
-        {/* Header */}
+        {/* Section Header */}
         <div className={styles.header}>
-          <p className={styles.eyebrow}>Doenças Tratadas</p>
+          <p className={styles.eyebrow}>Quando Consultar</p>
           <h2 className={styles.title}>
-            Resumo das condições acompanhadas no consultório
+            Se você tem algumas dessas doenças, <br />
+            <em className={styles.titleAccent}>procure um médico geriatra</em>
           </h2>
-          <p className={styles.lead}>
-            Clique em cada uma para ver as informações detalhadas, formas de prevenção e tratamentos nas páginas internas.
-          </p>
         </div>
 
-        {/* Grid of clean typographic cards */}
-        <div className={styles.grid}>
-          {DISEASES.map((disease) => (
-            <Link
-              key={disease.slug}
-              href={`/doencas/${disease.slug}`}
-              className={styles.card}
-            >
-              <div className={styles.cardHeader}>
-                <h3 className={styles.cardTitle}>{disease.title}</h3>
-              </div>
-              <p className={styles.cardDesc}>{disease.description}</p>
-              <div className={styles.cardLink}>
-                <span>Ver Detalhes</span>
-                <ArrowRightIcon />
-              </div>
-            </Link>
-          ))}
+        {/* Written List Layout */}
+        <div className={styles.listWrapper}>
+          <ul className={styles.listGrid}>
+            {DISEASES.map((d) => (
+              <li key={d.slug} className={styles.listItem}>
+                <Link href={`/doencas/${d.slug}`} className={styles.listLink}>
+                  <span className={styles.bullet} />
+                  <span className={styles.diseaseName}>{d.title}</span>
+                  <ArrowIcon />
+                </Link>
+              </li>
+            ))}
+            {/* The final 'e muito mais' non-clickable visual placeholder */}
+            <li className={`${styles.listItem} ${styles.moreItem}`}>
+              <span className={styles.bulletMore} />
+              <span className={styles.moreText}>... e muito mais!</span>
+            </li>
+          </ul>
+        </div>
+
+        {/* Final Section CTA */}
+        <div className={styles.footerCTA}>
+          <p className={styles.footerLead}>
+            O geriatra realiza o acompanhamento integrado da saúde na longevidade, organizando receitas e prevenindo complicações.
+          </p>
+          <a
+            href="https://api.whatsapp.com/send?phone=5544997013040&text=Olá!%20Gostaria%20de%20agendar%20uma%20consulta."
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.ctaButton}
+          >
+            Agendar Consulta
+          </a>
         </div>
 
       </div>

@@ -1,4 +1,3 @@
-import Image from "next/image";
 import styles from "./StaticBanner.module.css";
 
 function WhatsAppIcon() {
@@ -17,19 +16,7 @@ export default function StaticBanner() {
     <section className={styles.section}>
       <div className={styles.container}>
         <div className={styles.card}>
-          {/* Background photo */}
-          <div className={styles.photoWrap}>
-            <Image
-              src="/images/group_4614.webp"
-              alt="Idosa com dor de cabeça, representando doenças crônicas"
-              fill
-              className={styles.photo}
-            />
-            {/* Teal overlay: solid left → transparent right */}
-            <div className={styles.overlay} aria-hidden="true" />
-          </div>
-
-          {/* Text content */}
+          {/* Text content - completely centered, larger typography */}
           <div className={styles.content}>
             <h2 className={styles.title}>
               Você sabia que cerca de 70% da população idosa sofre de algum

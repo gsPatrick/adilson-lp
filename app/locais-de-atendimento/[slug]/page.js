@@ -88,7 +88,7 @@ const LOCATIONS_DATA = {
   },
   "visita-domiciliar": {
     city: "Visita Domiciliar",
-    state: "Maringá e Região",
+    state: "Paranavaí, Maringá e Região",
     type: "Atendimento em Casa",
     heroSubtitle: "Atendimento Domiciliar",
     heroTitle: <>O médico vai<br />até você</>,

@@ -1,7 +1,7 @@
 .section {
   width: 100%;
   background-color: #f7f7f5; /* bone canvas — never pure white */
-  padding: clamp(80px, 10vw, 160px) 0;
+  padding: clamp(80px, 8vw, 140px) 0;
   box-sizing: border-box;
 }
 
@@ -12,7 +12,7 @@
   padding: 0 clamp(20px, 4vw, 48px);
   display: flex;
   flex-direction: column;
-  gap: clamp(48px, 6vw, 80px);
+  gap: clamp(40px, 5vw, 64px);
   box-sizing: border-box;
 }
 
@@ -21,7 +21,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 16px;
+  gap: 12px;
   text-align: center;
 }
 
@@ -37,99 +37,158 @@
 
 .title {
   font-family: var(--font-family);
-  font-size: clamp(26px, 3.6vw, 46px);
+  font-size: clamp(24px, 3.2vw, 42px);
   font-weight: 700;
-  line-height: 1.2;
+  line-height: 1.25;
   letter-spacing: -0.02em;
   color: #44615f;
-  max-width: 26ch;
+  max-width: 32ch;
   margin: 0;
 }
 
-.lead {
-  font-family: var(--font-family);
-  font-size: clamp(14px, 1.2vw, 16px);
-  line-height: 1.6;
-  color: #667b79;
-  max-width: 600px;
-  margin: 0;
+.titleAccent {
+  font-style: italic;
+  color: #c5a880;
 }
 
-/* ── Cards grid ─────────────────────────────────────────────── */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+/* ── List wrapper & Grid ─────────────────────────────────────── */
+.listWrapper {
   width: 100%;
-}
-
-@media (max-width: 960px) {
-  .grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 640px) {
-  .grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* ── Individual card (now a Link) ──────────────────────────────── */
-.card {
-  display: flex;
-  flex-direction: column;
   background: #ffffff;
   border: 1px solid rgba(68, 97, 95, 0.08);
-  border-radius: 20px;
-  padding: 32px;
-  text-decoration: none;
+  border-radius: 24px;
+  padding: clamp(32px, 5vw, 64px);
   box-sizing: border-box;
-  min-height: 220px;
-  transition: border-color 0.35s ease, box-shadow 0.35s ease, transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 16px 40px rgba(68, 97, 95, 0.03);
 }
 
-.card:hover {
-  border-color: rgba(68, 97, 95, 0.25);
-  transform: translateY(-4px);
-  box-shadow: 0 16px 40px rgba(68, 97, 95, 0.06);
-}
-
-.cardHeader {
-  margin-bottom: 12px;
-}
-
-.cardTitle {
-  font-family: var(--font-family);
-  font-size: 18px;
-  font-weight: 700;
-  color: #44615f;
+.listGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px 48px;
+  list-style: none;
+  padding: 0;
   margin: 0;
-  line-height: 1.35;
 }
 
-.cardDesc {
+@media (max-width: 768px) {
+  .listGrid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+.listItem {
+  display: flex;
+  align-items: center;
+}
+
+.listLink {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+  text-decoration: none;
+  padding: 8px 0;
+  box-sizing: border-box;
+}
+
+.bullet {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #c5a880;
+  flex-shrink: 0;
+  transition: transform 0.25s ease;
+}
+
+.diseaseName {
   font-family: var(--font-family);
-  font-size: 14.5px;
+  font-size: clamp(15.5px, 1.6vw, 18px);
+  font-weight: 600;
+  color: #44615f;
+  transition: color 0.25s ease;
+}
+
+.itemArrow {
+  opacity: 0;
+  transform: translateX(-4px);
+  color: #c5a880;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+  margin-left: auto;
+}
+
+.listLink:hover .diseaseName {
+  color: #1a2e2d;
+}
+
+.listLink:hover .bullet {
+  transform: scale(1.3);
+  background-color: #44615f;
+}
+
+.listLink:hover .itemArrow {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ── More item ──────────────────────────────────────────────── */
+.moreItem {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 8px 0;
+}
+
+.bulletMore {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #44615f;
+  flex-shrink: 0;
+}
+
+.moreText {
+  font-family: var(--font-family);
+  font-size: clamp(16px, 1.6vw, 18.5px);
+  font-weight: 700;
+  font-style: italic;
+  color: #c5a880;
+}
+
+/* ── Footer CTA ─────────────────────────────────────────────── */
+.footerCTA {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 20px;
+}
+
+.footerLead {
+  font-family: var(--font-family);
+  font-size: clamp(15px, 1.5vw, 17px);
   line-height: 1.6;
   color: #667b79;
-  margin: 0 0 24px;
-  flex-grow: 1;
+  max-width: 620px;
+  margin: 0;
 }
 
-.cardLink {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
+.ctaButton {
+  display: inline-block;
+  background: linear-gradient(270deg, rgb(68, 97, 95) 0%, rgb(124, 164, 161) 100%);
+  border-radius: 5px;
+  color: #ffffff;
+  padding: 16px 40px;
   font-family: var(--font-family);
-  font-size: 13.5px;
+  font-size: 16px;
   font-weight: 700;
-  color: #c5a880; /* gold link */
-  margin-top: auto;
-  transition: gap 0.25s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
 }
 
-.card:hover .cardLink {
-  gap: 12px;
-  color: #44615f;
+.ctaButton:hover {
+  opacity: 0.9;
 }

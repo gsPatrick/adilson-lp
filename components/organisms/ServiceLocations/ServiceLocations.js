@@ -37,7 +37,7 @@ const LOCATIONS = [
   {
     slug: "visita-domiciliar",
     city: "Visita Domiciliar",
-    state: "Maringá e Região",
+    state: "Paranavaí, Maringá e Região",
     type: "Atendimento em Casa",
     description:
       "Para pacientes com mobilidade reduzida, acamados ou em pós-operatório. O médico se desloca até a residência do paciente com toda a estrutura necessária.",

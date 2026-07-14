@@ -46,6 +46,8 @@ const ADDITIONAL_DISEASES = [
   { title: "Ansiedade & Depressão", link: "/doencas/ansiedade-depressao" },
   { title: "Diabetes Mellitus", link: "/doencas/diabetes" },
   { title: "Hipertensão Arterial", link: "/doencas/hipertensao" },
+  { title: "Doença de Parkinson", link: "/doencas/parkinson" },
+  { title: "Reposição Hormonal", link: "/doencas/reposicao-hormonal" },
 ];
 
 function ArrowIcon() {

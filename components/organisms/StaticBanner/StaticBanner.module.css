@@ -11,73 +11,50 @@
   margin: 0 auto;
 }
 
-/* Card: rounded, with photo background + teal-to-transparent overlay */
+/* Card: solid color dark green background, centered text */
 .card {
   position: relative;
   width: 100%;
-  border-radius: 20px;
+  border-radius: 24px;
   overflow: hidden;
-  min-height: 300px;
+  min-height: 320px;
   background: #44615f;
   display: flex;
   align-items: center;
-  box-shadow: 0 20px 50px rgba(68, 97, 95, 0.15);
+  justify-content: center;
+  box-shadow: 0 20px 50px rgba(68, 97, 95, 0.12);
+  box-sizing: border-box;
 }
 
-/* Photo covers the whole card */
-.photoWrap {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-}
-
-.photo {
-  object-fit: cover;
-  object-position: right center;
-}
-
-/* Gradient: solid teal on left → transparent on right (photo shows through) */
-.overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    90deg,
-    #44615f 0%,
-    #44615f 30%,
-    rgba(68, 97, 95, 0.88) 48%,
-    rgba(68, 97, 95, 0.3) 68%,
-    rgba(68, 97, 95, 0.0) 100%
-  );
-}
-
-/* Text content sits on top */
+/* Text content sitting in the center */
 .content {
-  position: relative;
-  z-index: 2;
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  padding: 48px 52px;
-  max-width: 520px;
+  align-items: center;
+  text-align: center;
+  gap: 18px;
+  padding: 64px 48px;
+  max-width: 840px;
   box-sizing: border-box;
 }
 
 .title {
   font-family: var(--font-family);
-  font-size: clamp(18px, 2vw, 28px);
+  font-size: clamp(22px, 3vw, 34px);
   font-weight: 700;
   line-height: 1.35;
   color: #ffffff;
   margin: 0;
+  text-wrap: balance;
 }
 
 .body {
   font-family: var(--font-family);
-  font-size: 16px;
+  font-size: clamp(16px, 1.6vw, 19px);
   font-weight: 400;
   line-height: 1.6;
-  color: rgba(255, 255, 255, 0.88);
-  margin: 0;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0 0 8px 0;
 }
 
 .cta {
@@ -103,12 +80,22 @@
   padding: 14px 28px;
   font-family: var(--font-family);
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
-@media (max-width: 768px) {
-  .section { padding: 0 20px 60px; }
-  .card { min-height: auto; }
-  .content { padding: 36px 28px; max-width: 100%; }
-  .title { font-size: 20px; }
+@media (max-width: 900px) {
+  .section {
+    padding: 0 20px 60px;
+  }
+  
+  .card {
+    min-height: auto;
+  }
+
+  .content {
+    padding: 48px 24px;
+    gap: 16px;
+  }
 }

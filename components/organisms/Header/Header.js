@@ -56,124 +56,123 @@ export default function Header() {
               </ul>
             </li>
 
-            {/* Dropdown 2: Doenças Tratadas (with Nested Sub-Dropdowns) */}
-            <li className={`${styles.navItem} ${styles.hasDropdown}`}>
+            {/* Dropdown 2: Doenças Tratadas (Mega Dropdown Layout) */}
+            <li className={`${styles.navItem} ${styles.hasDropdown} ${styles.megaNavItem}`}>
               <span className={styles.navLink}>
                 Doenças Tratadas
                 <svg className={styles.arrowIcon} viewBox="0 0 24 24" width="12" height="12">
                   <path fill="currentColor" d="M7 10l5 5 5-5H7z" />
                 </svg>
               </span>
-              <ul className={styles.dropdownMenu}>
-                {/* Sub-dropdown A */}
-                <li className={`${styles.dropdownItem} ${styles.hasSubDropdown}`}>
-                  <span className={styles.dropdownLink}>
-                    Distúrbios Cognitivos
-                    <svg className={styles.arrowSubIcon} viewBox="0 0 24 24" width="12" height="12">
-                      <path fill="currentColor" d="M10 17l5-5-5-5v10z" />
-                    </svg>
-                  </span>
-                  <ul className={styles.subDropdownMenu}>
-                    <li className={styles.subDropdownItem}>
-                      <Link href="/doencas/alzheimer" className={styles.subDropdownLink}>
-                        Doença de Alzheimer
-                      </Link>
-                    </li>
-                    <li className={styles.subDropdownItem}>
-                      <Link href="/doencas/perda-memoria" className={styles.subDropdownLink}>
-                        Perda de Memória
-                      </Link>
-                    </li>
-                    <li className={styles.subDropdownItem}>
-                      <Link href="/doencas/demencia" className={styles.subDropdownLink}>
-                        Outras Demências
-                      </Link>
-                    </li>
-                  </ul>
-                </li>
+              
+              {/* Mega Dropdown Panel */}
+              <div className={styles.megaDropdown}>
+                <div className={styles.megaGrid}>
+                  {/* Column 1 */}
+                  <div className={styles.megaCol}>
+                    <h4 className={styles.megaColTitle}>Cognição e Movimento</h4>
+                    <ul className={styles.megaList}>
+                      <li>
+                        <Link href="/doencas/alzheimer" className={styles.megaLink}>
+                          Doença de Alzheimer
+                        </Link>
+                      </li>
+                      <li>
+                        <Link href="/doencas/parkinson" className={styles.megaLink}>
+                          Doença de Parkinson
+                        </Link>
+                      </li>
+                      <li>
+                        <Link href="/doencas/perda-memoria" className={styles.megaLink}>
+                          Perda de Memória
+                        </Link>
+                      </li>
+                      <li>
+                        <Link href="/doencas/demencia" className={styles.megaLink}>
+                          Outras Demências
+                        </Link>
+                      </li>
+                    </ul>
+                  </div>
 
-                {/* Sub-dropdown B */}
-                <li className={`${styles.dropdownItem} ${styles.hasSubDropdown}`}>
-                  <span className={styles.dropdownLink}>
-                    Saúde Muscular & Óssea
-                    <svg className={styles.arrowSubIcon} viewBox="0 0 24 24" width="12" height="12">
-                      <path fill="currentColor" d="M10 17l5-5-5-5v10z" />
-                    </svg>
-                  </span>
-                  <ul className={styles.subDropdownMenu}>
-                    <li className={styles.subDropdownItem}>
-                      <Link href="/doencas/sarcopenia" className={styles.subDropdownLink}>
-                        Sarcopenia (Perda de Massa)
-                      </Link>
-                    </li>
-                    <li className={styles.subDropdownItem}>
-                      <Link href="/doencas/osteoporose" className={styles.subDropdownLink}>
-                        Osteoporose
-                      </Link>
-                    </li>
-                    <li className={styles.subDropdownItem}>
-                      <Link href="/doencas/prevencao-quedas" className={styles.subDropdownLink}>
-                        Prevenção de Quedas
-                      </Link>
-                    </li>
-                  </ul>
-                </li>
+                  {/* Column 2 */}
+                  <div className={styles.megaCol}>
+                    <h4 className={styles.megaColTitle}>Força e Equilíbrio</h4>
+                    <ul className={styles.megaList}>
+                      <li>
+                        <Link href="/doencas/sarcopenia" className={styles.megaLink}>
+                          Sarcopenia (Perda de Massa)
+                        </Link>
+                      </li>
+                      <li>
+                        <Link href="/doencas/osteoporose" className={styles.megaLink}>
+                          Osteoporose
+                        </Link>
+                      </li>
+                      <li>
+                        <Link href="/doencas/prevencao-quedas" className={styles.megaLink}>
+                          Prevenção de Quedas
+                        </Link>
+                      </li>
+                    </ul>
+                  </div>
 
-                {/* Sub-dropdown C */}
-                <li className={`${styles.dropdownItem} ${styles.hasSubDropdown}`}>
-                  <span className={styles.dropdownLink}>
-                    Sono & Saúde Mental
-                    <svg className={styles.arrowSubIcon} viewBox="0 0 24 24" width="12" height="12">
-                      <path fill="currentColor" d="M10 17l5-5-5-5v10z" />
-                    </svg>
-                  </span>
-                  <ul className={styles.subDropdownMenu}>
-                    <li className={styles.subDropdownItem}>
-                      <Link href="/doencas/insonia" className={styles.subDropdownLink}>
-                        Insônia & Distúrbios do Sono
-                      </Link>
-                    </li>
-                    <li className={styles.subDropdownItem}>
-                      <Link href="/doencas/ansiedade-depressao" className={styles.subDropdownLink}>
-                        Ansiedade & Depressão
-                      </Link>
-                    </li>
-                  </ul>
-                </li>
+                  {/* Column 3 */}
+                  <div className={styles.megaCol}>
+                    <h4 className={styles.megaColTitle}>Sono, Mente e Hormônios</h4>
+                    <ul className={styles.megaList}>
+                      <li>
+                        <Link href="/doencas/insonia" className={styles.megaLink}>
+                          Insônia e Distúrbios do Sono
+                        </Link>
+                      </li>
+                      <li>
+                        <Link href="/doencas/ansiedade-depressao" className={styles.megaLink}>
+                          Ansiedade e Depressão
+                        </Link>
+                      </li>
+                      <li>
+                        <Link href="/doencas/reposicao-hormonal" className={styles.megaLink}>
+                          Reposição Hormonal
+                        </Link>
+                      </li>
+                    </ul>
+                  </div>
 
-                {/* Sub-dropdown D */}
-                <li className={`${styles.dropdownItem} ${styles.hasSubDropdown}`}>
-                  <span className={styles.dropdownLink}>
-                    Doenças Crônicas
-                    <svg className={styles.arrowSubIcon} viewBox="0 0 24 24" width="12" height="12">
-                      <path fill="currentColor" d="M10 17l5-5-5-5v10z" />
-                    </svg>
-                  </span>
-                  <ul className={styles.subDropdownMenu}>
-                    <li className={styles.subDropdownItem}>
-                      <Link href="/doencas/diabetes" className={styles.subDropdownLink}>
-                        Diabetes Mellitus
-                      </Link>
-                    </li>
-                    <li className={styles.subDropdownItem}>
-                      <Link href="/doencas/hipertensao" className={styles.subDropdownLink}>
-                        Hipertensão Arterial
-                      </Link>
-                    </li>
-                    <li className={styles.subDropdownItem}>
-                      <Link href="/doencas/polifarmacia" className={styles.subDropdownLink}>
-                        Polifarmácia (Revisão de Medicamentos)
-                      </Link>
-                    </li>
-                  </ul>
-                </li>
-              </ul>
+                  {/* Column 4 */}
+                  <div className={styles.megaCol}>
+                    <h4 className={styles.megaColTitle}>Metabolismo e Clínica</h4>
+                    <ul className={styles.megaList}>
+                      <li>
+                        <Link href="/doencas/diabetes" className={styles.megaLink}>
+                          Diabetes Mellitus
+                        </Link>
+                      </li>
+                      <li>
+                        <Link href="/doencas/hipertensao" className={styles.megaLink}>
+                          Hipertensão Arterial
+                        </Link>
+                      </li>
+                      <li>
+                        <Link href="/doencas/polifarmacia" className={styles.megaLink}>
+                          Polifarmácia (Revisão)
+                        </Link>
+                      </li>
+                      <li>
+                        <Link href="/emagrecimento" className={styles.megaLink}>
+                          Plano de Emagrecimento
+                        </Link>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
             </li>
 
-            {/* Dropdown 3: Exames & Tecnologias */}
+            {/* Dropdown 3: Exames & Diagnósticos */}
             <li className={`${styles.navItem} ${styles.hasDropdown}`}>
               <span className={styles.navLink}>
-                Tecnologias
+                Exames e Diagnósticos
                 <svg className={styles.arrowIcon} viewBox="0 0 24 24" width="12" height="12">
                   <path fill="currentColor" d="M7 10l5 5 5-5H7z" />
                 </svg>
@@ -181,12 +180,27 @@ export default function Header() {
               <ul className={styles.dropdownMenu}>
                 <li className={styles.dropdownItem}>
                   <Link href="/tecnologias/teste-genetico" className={styles.dropdownLink}>
-                    Teste Genético Preditivo
+                    Testes Genéticos
                   </Link>
                 </li>
                 <li className={styles.dropdownItem}>
-                  <Link href="/tecnologias/medicina-personalizada" className={styles.dropdownLink}>
-                    Medicina Personalizada
+                  <Link href="/tecnologias/medicina-personalizada#bioimpedancia" className={styles.dropdownLink}>
+                    Bioimpedância
+                  </Link>
+                </li>
+                <li className={styles.dropdownItem}>
+                  <Link href="/tecnologias/medicina-personalizada#polissonografia" className={styles.dropdownLink}>
+                    Polissonografia Domiciliar
+                  </Link>
+                </li>
+                <li className={styles.dropdownItem}>
+                  <Link href="/tecnologias/medicina-personalizada#terapias" className={styles.dropdownLink}>
+                    Terapias Injetáveis
+                  </Link>
+                </li>
+                <li className={styles.dropdownItem}>
+                  <Link href="/doencas/reposicao-hormonal" className={styles.dropdownLink}>
+                    Reposição Hormonal
                   </Link>
                 </li>
               </ul>
