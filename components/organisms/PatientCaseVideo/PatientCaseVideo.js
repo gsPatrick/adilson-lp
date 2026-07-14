@@ -14,7 +14,15 @@ export default function PatientCaseVideo() {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          video.play().catch((err) => console.log("Auto-play blocked:", err));
+          // Tenta tocar com som ativado
+          video.muted = false;
+          setIsMuted(false);
+          video.play().catch((err) => {
+            console.log("Auto-play com som bloqueado pelo navegador, tocando mudo:", err);
+            video.muted = true;
+            setIsMuted(true);
+            video.play().catch(e => console.log("Autoplay mudo também bloqueado:", e));
+          });
         } else {
           video.pause();
         }
@@ -73,7 +81,7 @@ export default function PatientCaseVideo() {
                 className={styles.collageVideo}
                 autoPlay
                 loop
-                muted
+                muted={isMuted}
                 playsInline
               />
               <button
