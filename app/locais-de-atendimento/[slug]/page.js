@@ -1,8 +1,25 @@
 import { notFound } from "next/navigation";
+import Link from "next/link";
 import CTASection from "@/components/organisms/CTASection/CTASection";
 import Footer from "@/components/organisms/Footer/Footer";
 import Hero from "@/components/organisms/Hero/Hero";
 import styles from "./local.module.css";
+
+const REGION_LINKS = {
+  "Maringá": "maringa",
+  "Sarandi": "sarandi",
+  "Paiçandu": "paicandu",
+  "Mandaguaçu": "mandaguacu",
+  "Marialva": "marialva",
+  "Iguaraçu": "iguaracu",
+  "Região Metropolitana de Maringá": "regiao-metropolitana-de-maringa",
+  "Paranavaí": "paranavai",
+  "Tamboara": "tamboara",
+  "Terra Rica": "terra-rica",
+  "Loanda": "loanda",
+  "Guairaçá": "guairaca",
+  "Noroeste do Paraná": "noroeste-do-parana"
+};
 
 const LOCATIONS_DATA = {
   maringa: {
@@ -83,7 +100,7 @@ const LOCATIONS_DATA = {
         ],
       },
     ],
-    regionKeywords: ["Paranavaí", "Terra Rica", "Tamboara", "Loanda", "Guairaçá", "Alto Paraná", "Amaporã", "Noroeste do Paraná"],
+    regionKeywords: ["Paranavaí", "Tamboara", "Terra Rica", "Loanda", "Guairaçá", "Noroeste do Paraná"],
     schemaCity: "Paranavaí",
   },
   "visita-domiciliar": {
@@ -164,6 +181,272 @@ const LOCATIONS_DATA = {
     regionKeywords: [],
     schemaCity: "Brasil",
   },
+  sarandi: {
+    city: "Sarandi",
+    state: "PR",
+    type: "Atendimento Presencial e Domiciliar",
+    address: "R. Olímpio Totti, 38 Jardim Das Nações, Clinic Garden - Maringá - PR (Consultório de Referência)",
+    heroSubtitle: "Atendimento em Sarandi — PR",
+    heroTitle: <>Geriatria e Nutrologia<br />para Sarandi</>,
+    heroDesc: "Acesso facilitado a consultas de excelência na vizinha Maringá ou visita médica domiciliar diretamente em Sarandi.",
+    seoTitle: "Geriatra em Sarandi-PR | Dr. Adilson Silvestre — Consulta e Visita Domiciliar",
+    seoDesc: "Precisa de um médico geriatra em Sarandi-PR? O Dr. Adilson Silvestre atende moradores de Sarandi presencialmente na sede em Maringá ou através de visitas domiciliares.",
+    intro: "Para pacientes que residem em Sarandi-PR, o Dr. Adilson Silvestre oferece atendimento de referência em geriatria e nutrologia. As consultas presenciais acontecem na sede principal do consultório em Maringá (localizado a poucos minutos de Sarandi), com a opção de atendimento domiciliar para pacientes acamados ou com mobilidade reduzida.",
+    sections: [
+      {
+        title: "Opções de atendimento para moradores de Sarandi",
+        items: [
+          "Consulta Presencial: Atendimento na sede estruturada de Maringá",
+          "Atendimento Domiciliar: Visita médica completa em sua residência em Sarandi",
+          "Avaliação Geriátrica Global (AGG)",
+          "Investigação detalhada de memória, sarcopenia, osteoporose e dores"
+        ]
+      }
+    ],
+    regionKeywords: ["Maringá", "Sarandi", "Paiçandu", "Mandaguaçu", "Marialva", "Iguaraçu"],
+    schemaCity: "Sarandi"
+  },
+  paicandu: {
+    city: "Paiçandu",
+    state: "PR",
+    type: "Atendimento Presencial e Domiciliar",
+    address: "R. Olímpio Totti, 38 Jardim Das Nações, Clinic Garden - Maringá - PR (Consultório de Referência)",
+    heroSubtitle: "Atendimento em Paiçandu — PR",
+    heroTitle: <>Geriatria e Nutrologia<br />para Paiçandu</>,
+    heroDesc: "Consultas de excelência na vizinha Maringá ou visita médica domiciliar diretamente em Paiçandu.",
+    seoTitle: "Geriatra em Paiçandu-PR | Dr. Adilson Silvestre — Consulta e Visita Domiciliar",
+    seoDesc: "Procurando médico geriatra em Paiçandu-PR? Dr. Adilson Silvestre oferece consultas de 60 a 90 minutos em Maringá ou visita médica em domicílio em Paiçandu.",
+    intro: "Moradores de Paiçandu contam com a proximidade da sede de Maringá para realizar consultas presenciais completas com o Dr. Adilson Silvestre. Pacientes acamados ou impossibilitados de viajar também podem agendar visitas geriátricas domiciliares no próprio município de Paiçandu.",
+    sections: [
+      {
+        title: "Opções de atendimento para moradores de Paiçandu",
+        items: [
+          "Consulta Presencial: Atendimento completo no consultório em Maringá",
+          "Atendimento Domiciliar: O geriatra vai até a sua residência em Paiçandu",
+          "Avaliação de medicamentos (polifarmácia) e geriatria preventiva",
+          "Acompanhamento atencioso e humanizado"
+        ]
+      }
+    ],
+    regionKeywords: ["Maringá", "Sarandi", "Paiçandu", "Mandaguaçu", "Marialva", "Iguaraçu"],
+    schemaCity: "Paiçandu"
+  },
+  mandaguacu: {
+    city: "Mandaguaçu",
+    state: "PR",
+    type: "Atendimento Presencial e Domiciliar",
+    address: "R. Olímpio Totti, 38 Jardim Das Nações, Clinic Garden - Maringá - PR (Consultório de Referência)",
+    heroSubtitle: "Atendimento em Mandaguaçu — PR",
+    heroTitle: <>Geriatria e Nutrologia<br />para Mandaguaçu</>,
+    heroDesc: "Consultas presenciais na sede de Maringá ou atendimento domiciliar em Mandaguaçu.",
+    seoTitle: "Geriatra em Mandaguaçu-PR | Dr. Adilson Silvestre — Consulta e Visita Domiciliar",
+    seoDesc: "Atendimento geriátrico especializado para Mandaguaçu-PR. Dr. Adilson Silvestre atende no consultório próximo em Maringá ou por visita em domicílio.",
+    intro: "O Dr. Adilson Silvestre oferece atendimento de geriatria de ponta para a população de Mandaguaçu-PR. Pacientes ativos podem se consultar presencialmente na clínica em Maringá, enquanto idosos com limitações contam com o serviço de visitas domiciliares sob medida.",
+    sections: [
+      {
+        title: "Serviços para a região de Mandaguaçu",
+        items: [
+          "Acesso fácil à estrutura de bioimpedanciometria e exames em Maringá",
+          "Visitas domiciliares agendadas diretamente em Mandaguaçu",
+          "Controle de hipertensão, diabetes, Alzheimer e osteoporose"
+        ]
+      }
+    ],
+    regionKeywords: ["Maringá", "Sarandi", "Paiçandu", "Mandaguaçu", "Marialva", "Iguaraçu"],
+    schemaCity: "Mandaguaçu"
+  },
+  marialva: {
+    city: "Marialva",
+    state: "PR",
+    type: "Atendimento Presencial e Domiciliar",
+    address: "R. Olímpio Totti, 38 Jardim Das Nações, Clinic Garden - Maringá - PR (Consultório de Referência)",
+    heroSubtitle: "Atendimento em Marialva — PR",
+    heroTitle: <>Geriatria e Nutrologia<br />para Marialva</>,
+    heroDesc: "Acompanhamento da saúde física e cognitiva para a população de Marialva.",
+    seoTitle: "Geriatra em Marialva-PR | Dr. Adilson Silvestre — Consulta e Visita Domiciliar",
+    seoDesc: "Médico geriatra para Marialva-PR. Consultas presenciais no consultório em Maringá ou visitas médicas agendadas na residência do paciente em Marialva.",
+    intro: "Pacientes da 'Capital da Uva' contam com o atendimento do Dr. Adilson Silvestre em seu consultório de referência em Maringá ou através de consultas domiciliares atenciosas em Marialva, ideais para pacientes com restrição de mobilidade.",
+    sections: [
+      {
+        title: "Atendimento para a população de Marialva",
+        items: [
+          "Consultas presenciais confortáveis na clínica próxima em Maringá",
+          "Atendimento domiciliar humanizado em Marialva",
+          "Foco em envelhecimento ativo, nutrologia e reabilitação funcional"
+        ]
+      }
+    ],
+    regionKeywords: ["Maringá", "Sarandi", "Paiçandu", "Mandaguaçu", "Marialva", "Iguaraçu"],
+    schemaCity: "Marialva"
+  },
+  iguaracu: {
+    city: "Iguaraçu",
+    state: "PR",
+    type: "Atendimento Presencial e Domiciliar",
+    address: "R. Olímpio Totti, 38 Jardim Das Nações, Clinic Garden - Maringá - PR (Consultório de Referência)",
+    heroSubtitle: "Atendimento em Iguaraçu — PR",
+    heroTitle: <>Geriatria e Nutrologia<br />para Iguaraçu</>,
+    heroDesc: "Consultas presenciais detalhadas em Maringá ou visitas médicas domiciliares em Iguaraçu.",
+    seoTitle: "Geriatra em Iguaraçu-PR | Dr. Adilson Silvestre — Consulta e Visita Domiciliar",
+    seoDesc: "Atendimento geriátrico e de nutrologia para Iguaraçu-PR. Dr. Adilson Silvestre atende no consultório em Maringá e realiza visitas domiciliares.",
+    intro: "O Dr. Adilson Silvestre disponibiliza atendimento médico humanizado focado no envelhecimento saudável para moradores de Iguaraçu-PR, com consultas presenciais estruturadas e atendimento domiciliar personalizado.",
+    sections: [
+      {
+        title: "Serviços médicos em Iguaraçu",
+        items: [
+          "Consultas no consultório Clinic Garden em Maringá",
+          "Atendimento domiciliar para maior conforto do idoso em Iguaraçu",
+          "Prevenção e controle de problemas comuns da idade"
+        ]
+      }
+    ],
+    regionKeywords: ["Maringá", "Sarandi", "Paiçandu", "Mandaguaçu", "Marialva", "Iguaraçu"],
+    schemaCity: "Iguaraçu"
+  },
+  "regiao-metropolitana-de-maringa": {
+    city: "Região Metropolitana de Maringá",
+    state: "PR",
+    type: "Atendimento Presencial e Domiciliar",
+    address: "R. Olímpio Totti, 38 Jardim Das Nações, Clinic Garden - Maringá - PR",
+    heroSubtitle: "Atendimento na Grande Maringá",
+    heroTitle: <>Geriatria especializada<br />na Grande Maringá</>,
+    heroDesc: "Estrutura completa de atendimento presencial em Maringá e visitas médicas em toda a região metropolitana.",
+    seoTitle: "Geriatra na Região Metropolitana de Maringá-PR | Dr. Adilson Silvestre",
+    seoDesc: "Consulte um médico geriatra na Região Metropolitana de Maringá-PR. Dr. Adilson Silvestre atende presencialmente na clínica e realiza visitas em domicílio.",
+    intro: "Toda a Região Metropolitana de Maringá tem acesso às soluções integradas de geriatria preventiva e nutrologia do Dr. Adilson Silvestre. O atendimento pode ser presencial na clínica sede ou domiciliar sob agendamento prévio.",
+    sections: [
+      {
+        title: "Cidades atendidas na Região Metropolitana",
+        items: [
+          "Maringá, Sarandi, Paiçandu, Mandaguaçu, Marialva e Iguaraçu",
+          "Atendimento domiciliar para pacientes impossibilitados de locomoção",
+          "Avaliação de polifarmácia, equilíbrio, sono e declínio de força"
+        ]
+      }
+    ],
+    regionKeywords: ["Maringá", "Sarandi", "Paiçandu", "Mandaguaçu", "Marialva", "Iguaraçu", "Região Metropolitana de Maringá"],
+    schemaCity: "Maringá"
+  },
+  tamboara: {
+    city: "Tamboara",
+    state: "PR",
+    type: "Atendimento Presencial e Domiciliar",
+    address: "Rua Getúlio Vargas n455, Centro, Instituto Longeviver - Paranavaí-PR (Consultório de Referência)",
+    heroSubtitle: "Atendimento em Tamboara — PR",
+    heroTitle: <>Geriatria e Nutrologia<br />para Tamboara</>,
+    heroDesc: "Consultas de alta qualidade em Paranavaí ou visita médica no próprio município de Tamboara.",
+    seoTitle: "Geriatra em Tamboara-PR | Dr. Adilson Silvestre — Consulta e Visita Domiciliar",
+    seoDesc: "Precisa de geriatra em Tamboara-PR? Dr. Adilson Silvestre atende no consultório em Paranavaí ou realiza visitas domiciliares em Tamboara. Agende agora.",
+    intro: "Moradores de Tamboara-PR contam com atendimento do geriatra Dr. Adilson Silvestre de forma presencial no consultório de Paranavaí ou por meio de visitas médicas atenciosas no próprio domicílio do paciente em Tamboara.",
+    sections: [
+      {
+        title: "Opções de saúde para Tamboara",
+        items: [
+          "Consultas a apenas alguns minutos de distância, na clínica em Paranavaí",
+          "Atendimento geriátrico e nutrológico domiciliar em Tamboara",
+          "Diagnóstico e prevenção de perda de força física e memória"
+        ]
+      }
+    ],
+    regionKeywords: ["Paranavaí", "Tamboara", "Terra Rica", "Loanda", "Guairaçá"],
+    schemaCity: "Tamboara"
+  },
+  "terra-rica": {
+    city: "Terra Rica",
+    state: "PR",
+    type: "Atendimento Presencial e Domiciliar",
+    address: "Rua Getúlio Vargas n455, Centro, Instituto Longeviver - Paranavaí-PR (Consultório de Referência)",
+    heroSubtitle: "Atendimento em Terra Rica — PR",
+    heroTitle: <>Geriatria e Nutrologia<br />para Terra Rica</>,
+    heroDesc: "Atendimento presencial em Paranavaí ou visitas domiciliares completas em Terra Rica.",
+    seoTitle: "Geriatra em Terra Rica-PR | Dr. Adilson Silvestre — Consulta e Visita Domiciliar",
+    seoDesc: "Busca geriatra em Terra Rica-PR? Dr. Adilson Silvestre realiza consultas em consultório em Paranavaí e oferece visitas domiciliares para pacientes acamados.",
+    intro: "O Dr. Adilson Silvestre oferece consultas presenciais estruturadas no consultório de Paranavaí e realiza visitas em domicílio em Terra Rica-PR para pacientes idosos com dificuldades de locomoção, reduzindo o estresse do deslocamento rodoviário.",
+    sections: [
+      {
+        title: "Atendimento especializado em Terra Rica",
+        items: [
+          "Consulta no consultório do Instituto Longeviver em Paranavaí",
+          "Visita domiciliar atenta na comodidade da sua casa em Terra Rica",
+          "Controle de doenças crônicas como hipertensão e diabetes"
+        ]
+      }
+    ],
+    regionKeywords: ["Paranavaí", "Tamboara", "Terra Rica", "Loanda", "Guairaçá"],
+    schemaCity: "Terra Rica"
+  },
+  loanda: {
+    city: "Loanda",
+    state: "PR",
+    type: "Atendimento Presencial e Domiciliar",
+    address: "Rua Getúlio Vargas n455, Centro, Instituto Longeviver - Paranavaí-PR (Consultório de Referência)",
+    heroSubtitle: "Atendimento em Loanda — PR",
+    heroTitle: <>Geriatria e Nutrologia<br />para Loanda</>,
+    heroDesc: "Consulta médica de referência em Paranavaí ou visita domiciliar na cidade de Loanda.",
+    seoTitle: "Geriatra em Loanda-PR | Dr. Adilson Silvestre — Consulta e Visita Domiciliar",
+    seoDesc: "Atendimento médico geriatra para Loanda-PR. Dr. Adilson Silvestre atende presencialmente na clínica em Paranavaí e em domicílio em Loanda.",
+    intro: "O Dr. Adilson Silvestre atende a população de Loanda-PR por meio de consultas programadas no consultório de Paranavaí ou visitas domiciliares completas para idosos com restrição grave de locomoção.",
+    sections: [
+      {
+        title: "Como se consultar residindo em Loanda",
+        items: [
+          "Agende consulta presencial na clínica de Paranavaí",
+          "Solicite atendimento domiciliar atencioso diretamente em Loanda",
+          "Revisão de polifarmácia e exames clínicos preventivos"
+        ]
+      }
+    ],
+    regionKeywords: ["Paranavaí", "Tamboara", "Terra Rica", "Loanda", "Guairaçá"],
+    schemaCity: "Loanda"
+  },
+  guairaca: {
+    city: "Guairaçá",
+    state: "PR",
+    type: "Atendimento Presencial e Domiciliar",
+    address: "Rua Getúlio Vargas n455, Centro, Instituto Longeviver - Paranavaí-PR (Consultório de Referência)",
+    heroSubtitle: "Atendimento em Guairaçá — PR",
+    heroTitle: <>Geriatria e Nutrologia<br />para Guairaçá</>,
+    heroDesc: "Atendimento médico humanizado na clínica de Paranavaí ou visita domiciliar em Guairaçá.",
+    seoTitle: "Geriatra em Guairaçá-PR | Dr. Adilson Silvestre — Consulta e Visita Domiciliar",
+    seoDesc: "Dr. Adilson Silvestre atende pacientes de Guairaçá-PR com consultas presenciais em Paranavaí e visitas domiciliares sob agendamento.",
+    intro: "Moradores de Guairaçá-PR contam com a comodidade das consultas médicas presenciais no consultório em Paranavaí ou podem usufruir da visita geriátrica domiciliar sob agendamento prévio.",
+    sections: [
+      {
+        title: "Serviços médicos para Guairaçá",
+        items: [
+          "Consultas presenciais de 60 a 90 minutos no consultório",
+          "Visita domiciliar preventiva diretamente em Guairaçá",
+          "Prevenção de quedas, ajuste seguro de receitas e promoção de autonomia"
+        ]
+      }
+    ],
+    regionKeywords: ["Paranavaí", "Tamboara", "Terra Rica", "Loanda", "Guairaçá"],
+    schemaCity: "Guairaçá"
+  },
+  "noroeste-do-parana": {
+    city: "Noroeste do Paraná",
+    state: "PR",
+    type: "Atendimento Presencial e Domiciliar",
+    address: "Rua Getúlio Vargas n455, Centro, Instituto Longeviver - Paranavaí-PR",
+    heroSubtitle: "Atendimento no Noroeste do Estado",
+    heroTitle: <>Geriatria especializada<br />no Noroeste do PR</>,
+    heroDesc: "Estrutura de consultas de referência em Paranavaí e atendimento domiciliar em toda a região.",
+    seoTitle: "Geriatra no Noroeste do Paraná-PR | Dr. Adilson Silvestre",
+    seoDesc: "Consulte um geriatra especialista no Noroeste do Paraná-PR. Dr. Adilson Silvestre atende presencialmente na clínica e faz visitas domiciliares regionais.",
+    intro: "Toda a região do Noroeste do Paraná conta com o suporte especializado do Dr. Adilson Silvestre para acompanhamento geriátrico, nutrologia e reabilitação de idosos, seja em consultório ou em domicílio.",
+    sections: [
+      {
+        title: "Cidades atendidas no Noroeste do PR",
+        items: [
+          "Paranavaí, Tamboara, Terra Rica, Loanda e Guairaçá",
+          "Visitas domiciliares para pacientes com mobilidade reduzida",
+          "Avaliação diagnóstica completa e acompanhamento preventivo"
+        ]
+      }
+    ],
+    regionKeywords: ["Paranavaí", "Tamboara", "Terra Rica", "Loanda", "Guairaçá", "Noroeste do Paraná"],
+    schemaCity: "Paranavaí"
+  }
 };
 
 export async function generateStaticParams() {
@@ -237,9 +520,17 @@ export default async function LocationDetailPage({ params }) {
           {data.regionKeywords.length > 0 && (
             <div className={styles.regionRow}>
               <span className={styles.regionLabel}>Regiões atendidas:</span>
-              {data.regionKeywords.map((r, k) => (
-                <span key={k} className={styles.regionTag}>{r}</span>
-              ))}
+              {data.regionKeywords.map((r, k) => {
+                const targetSlug = REGION_LINKS[r];
+                if (targetSlug) {
+                  return (
+                    <Link key={k} href={`/locais-de-atendimento/${targetSlug}`} className={styles.regionTag}>
+                      {r}
+                    </Link>
+                  );
+                }
+                return <span key={k} className={styles.regionTag}>{r}</span>;
+              })}
             </div>
           )}
         </div>
