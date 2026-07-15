@@ -62,19 +62,22 @@ export default function AboutDoctor() {
 
           <div className={styles.bio}>
             <p>
-              Me formei em Medicina pela Universidade de Marília em 2011. Desde o início da minha trajetória, sempre me fiz uma pergunta que mudou a forma como passei a enxergar a medicina: Cuidar da saúde deveria significar apenas tratar doenças?
+              Me formei em Medicina pela Universidade de Marília em 2011. Desde o início da minha trajetória, sempre me fiz uma pergunta que mudou a forma como passei a enxergar a medicina: <strong>Cuidar da saúde deveria significar apenas tratar doenças?</strong>
             </p>
             <p>
               Durante a formação médica aprendemos profundamente sobre diagnóstico e tratamentos medicamentosos. A medicina é extremamente eficiente quando se trata de identificar doenças e prescrever medicamentos adequados. Mas com o tempo percebi que muitas pessoas continuavam sofrendo, mesmo quando estavam seguindo tratamentos corretos.
             </p>
             <p>
-              Foi então que comecei a compreender algo fundamental: a saúde vai muito além de remédios. Alimentação, atividade física, qualidade do sono, saúde emocional, espiritual e propósito de vida influenciam diretamente a forma como envelhecemos.
+              Foi então que comecei a compreender algo fundamental: <strong>a saúde vai muito além de remédios...</strong> Alimentação, atividade física, qualidade do sono, saúde emocional, espiritual e propósito de vida influenciam diretamente a forma como envelhecemos.
             </p>
             <p>
-              Ao longo de mais de 10 anos de estudos e experiência clínica, desenvolvi uma forma de atendimento baseada em algo essencial: aproximar o paciente do médico e envolver cada pessoa no próprio cuidado. Acredito que o melhor resultado acontece quando existe parceria. Meu papel é orientar, organizar o tratamento e oferecer conhecimento médico baseado em ciência. Mas a verdadeira transformação acontece quando o paciente entende o próprio tratamento e se compromete com o cuidado da sua saúde.
+              Ao longo de mais de 10 anos de estudos e experiência clínica, desenvolvi uma forma de atendimento baseada em algo essencial: <strong>aproximar o paciente do médico e envolver cada pessoa no próprio cuidado.</strong> Acredito que o melhor resultado acontece quando existe parceria. Meu papel é orientar, organizar o tratamento e oferecer conhecimento médico baseado em ciência. Mas a verdadeira transformação acontece quando o paciente entende o próprio tratamento e se compromete com o cuidado da sua saúde.
             </p>
             <p>
-              Atuo principalmente no acompanhamento de pessoas que desejam envelhecer com mais saúde, autonomia e qualidade de vida, além de pacientes que precisam de atenção especializada para condições comuns do envelhecimento. Também realizo acompanhamento clínico de pacientes que desejam utilizar medicações modernas para controle de peso com segurança e acompanhamento médico adequado.
+              Atuo principalmente no acompanhamento de pessoas que desejam envelhecer com mais saúde, autonomia e qualidade de vida, além de pacientes que precisam de atenção especializada para condições comuns do envelhecimento.
+            </p>
+            <p>
+              <strong>Também realizo acompanhamento clínico de pacientes que desejam utilizar medicações modernas para controle de peso com segurança e acompanhamento médico adequado.</strong>
             </p>
             <p>
               Meu objetivo é oferecer uma medicina próxima, clara e individualizada, em que cada paciente se sinta compreendido e participe ativamente das decisões sobre sua saúde.
