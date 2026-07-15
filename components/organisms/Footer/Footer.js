@@ -64,6 +64,8 @@ export default function Footer() {
             <ul className={styles.colList}>
               <li><Link href="/" className={styles.colLink}>Home</Link></li>
               <li><Link href="/sobre" className={styles.colLink}>Sobre o Médico</Link></li>
+              <li><Link href="/doencas" className={styles.colLink}>Doenças Tratadas</Link></li>
+              <li><Link href="/locais-de-atendimento" className={styles.colLink}>Locais de Atendimento</Link></li>
               <li><Link href="/blog" className={styles.colLink}>Artigos / Blog</Link></li>
               <li><Link href="/perguntas-frequentes" className={styles.colLink}>Perguntas Frequentes</Link></li>
             </ul>
@@ -95,6 +97,7 @@ export default function Footer() {
               <li><Link href="/doencas/diabetes" className={styles.colLink}>Diabetes Mellitus</Link></li>
               <li><Link href="/doencas/hipertensao" className={styles.colLink}>Hipertensão Arterial</Link></li>
               <li><Link href="/doencas/polifarmacia" className={styles.colLink}>Polifarmácia (Revisão)</Link></li>
+              <li><Link href="/emagrecimento" className={styles.colLink}>Plano de Emagrecimento</Link></li>
             </ul>
           </div>
           <div className={styles.linksCol}>
