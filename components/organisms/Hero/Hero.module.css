@@ -129,6 +129,9 @@
   font-weight: 600;
   line-height: 62px;
   color: var(--color-primary-green);
+  overflow-wrap: break-word;
+  word-break: break-word;
+  hyphens: auto;
 }
 
 .descriptionWrapper {
@@ -288,6 +291,38 @@
 
   .heroPhoto {
     margin-bottom: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .containerInner {
+    padding: 0 24px 40px;
+  }
+
+  /* Fluid type so long words ("envelhecimento") never overflow the frame */
+  .title {
+    font-size: clamp(28px, 8.5vw, 44px);
+    line-height: 1.12;
+  }
+
+  .subtitle {
+    font-size: clamp(15px, 4.2vw, 19px);
+    line-height: 1.45;
+    letter-spacing: 0.8px;
+  }
+
+  .description {
+    font-size: clamp(16px, 4.4vw, 19px);
+    line-height: 1.55;
+  }
+
+  .logoWrapper {
+    width: min(253px, 70%);
+    max-width: 253px;
+  }
+
+  .logoImage {
+    width: 100%;
   }
 }
 

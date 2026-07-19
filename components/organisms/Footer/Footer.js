@@ -137,7 +137,7 @@ export default function Footer() {
 
           <div className={styles.bottomMeta}>
             <p className={styles.copy}>
-              © {currentYear} Dr. Adilson Silvestre — Médico Geriatra. CRM-PR 31.470 | RQE 28.536
+              © {currentYear} Dr. Adilson Silvestre — Médico Geriatra. CRM-PR 31.470 | RQE 31.963
             </p>
             <p className={styles.developerCredits}>
               Desenvolvido por:{" "}

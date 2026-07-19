@@ -10,6 +10,8 @@ export default function Hero({
     <>
       DR. ADILSON SILVESTRE &nbsp;|&nbsp; CRM 31.470 PR
       <br />
+      RQE 31.963
+      <br />
       GERIATRA EM MARINGÁ E PARANAVAÍ - PR
     </>
   ),
