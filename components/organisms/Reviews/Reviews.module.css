@@ -1,26 +1,10 @@
 .section {
-  position: relative;
-  height: 300vh; /* Runway mais longa para scroll horizontal mais suave */
   background-color: #f7f7f5;
   color: #44615f;
+  padding: clamp(64px, 10vw, 120px) 0;
 }
 
-.sticky {
-  position: sticky;
-  top: 0;
-  height: 100vh;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding-top: clamp(48px, 8vh, 80px);
-  padding-bottom: clamp(24px, 4vh, 48px);
-}
-
-/* Header Container to align content to page-padding bounds */
-.headerContainer {
-  position: relative;
-  z-index: 1;
+.inner {
   width: 100%;
   max-width: var(--container-max-width, 1280px);
   margin: 0 auto;
@@ -30,7 +14,8 @@
 
 /* Header */
 .header {
-  max-width: 720px;
+  max-width: 640px;
+  margin-bottom: clamp(40px, 6vw, 72px);
 }
 
 .label {
@@ -41,7 +26,7 @@
   text-transform: uppercase;
   letter-spacing: 0.05em;
   color: #7ca4a1;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
 }
 
 .title {
@@ -51,7 +36,7 @@
   font-weight: 700;
   color: #44615f;
   letter-spacing: -0.02em;
-  margin-bottom: 12px;
+  margin-bottom: 14px;
 }
 
 .lead {
@@ -61,47 +46,43 @@
   color: rgba(68, 97, 95, 0.8);
 }
 
-/* Track container — overflow hidden é OBRIGATÓRIO para cortar os cards fora do viewport */
-.trackContainer {
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-  margin-top: clamp(20px, 3.5vh, 40px);
-  flex: 1;
-  display: flex;
-  align-items: center;
-}
-
-.track {
-  display: flex;
-  flex-direction: row;
+/* Cards grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 24px;
-  width: max-content;
-  padding-left: max(24px, calc((100vw - 1280px) / 2 + 24px));
-  padding-right: max(24px, calc((100vw - 1280px) / 2 + 24px));
-  transition: transform 0.08s ease-out;
-  will-change: transform;
-  align-items: stretch;
 }
 
-/* Card design */
+/* Card — initial hidden state */
 .card {
   background: #ffffff;
   border: 1px solid rgba(68, 97, 95, 0.08);
   border-radius: 20px;
   padding: 28px;
-  width: 340px;
-  flex-shrink: 0;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   min-height: 260px;
-  transition: border-color 0.4s ease, box-shadow 0.4s ease;
+
+  /* entrance animation start state */
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 0.55s ease,
+    transform 0.55s ease,
+    border-color 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+/* Card — visible state triggered by IntersectionObserver */
+.cardVisible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .card:hover {
   border-color: rgba(124, 164, 161, 0.25);
-  box-shadow: 0 20px 40px rgba(68, 97, 95, 0.05);
+  box-shadow: 0 20px 40px rgba(68, 97, 95, 0.06);
 }
 
 .cardHeader {
@@ -197,49 +178,26 @@
   flex-shrink: 0;
 }
 
-/* Responsiveness overrides - keeping the scroll animations! */
+/* Responsiveness */
 @media (max-width: 960px) {
-  .sticky {
-    top: 0;
-    height: 100vh;
-    justify-content: center;
-    padding-top: clamp(32px, 6vh, 64px);
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
   }
+}
 
-  .track {
-    gap: 16px;
-    padding-left: clamp(20px, 4vw, 48px);
-    padding-right: clamp(20px, 4vw, 48px);
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: 1fr;
   }
 
   .card {
-    width: 300px;
-    min-height: 250px;
+    min-height: auto;
     padding: 20px;
   }
 
   .reviewText {
     font-size: 14px;
-    margin-bottom: 16px;
-  }
-}
-
-@media (max-width: 600px) {
-  .sticky {
-    top: 0;
-    height: 100vh;
-    padding-top: clamp(24px, 5vh, 48px);
-  }
-
-  .card {
-    width: 275px;
-    min-height: 240px;
-    padding: 16px;
-  }
-
-  .reviewText {
-    font-size: 13.5px;
-    line-height: 1.5;
+    line-height: 1.55;
   }
 
   .cardHeader {

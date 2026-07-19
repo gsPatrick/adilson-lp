@@ -98,13 +98,69 @@ function CheckIcon() {
   );
 }
 
+function ReviewCard({ review, index }) {
+  const cardRef = useRef(null);
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const el = cardRef.current;
+    if (!el) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.15 }
+    );
+
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <div
+      ref={cardRef}
+      className={`${styles.card} ${visible ? styles.cardVisible : ""}`}
+      style={{ transitionDelay: `${index * 0.1}s` }}
+    >
+      {/* Card Header: Stars & Verification */}
+      <div className={styles.cardHeader}>
+        <div className={styles.starsRow}>
+          {Array.from({ length: review.stars }).map((_, i) => (
+            <StarIcon key={i} />
+          ))}
+        </div>
+        <div className={styles.verifiedBadge}>
+          <CheckIcon />
+          <span>Verificado</span>
+        </div>
+      </div>
+
+      {/* Card Body: Testimonial Text */}
+      <p className={styles.reviewText}>"{review.text}"</p>
+
+      {/* Card Footer: Client Info & Google Logo */}
+      <div className={styles.cardFooter}>
+        <div className={styles.clientInfo}>
+          <span className={styles.clientName}>{review.name}</span>
+          <span className={styles.clientRole}>
+            {review.role} • <span className={styles.dateText}>{review.date}</span>
+          </span>
+        </div>
+        <div className={styles.googleIconWrapper}>
+          <GoogleIcon />
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function Reviews() {
   const [reviews, setReviews] = useState(INITIAL_REVIEWS);
-  const sectionRef = useRef(null);
-  const trackRef = useRef(null);
-  const [translateX, setTranslateX] = useState(0);
 
-  // Tenta buscar avaliações reais do Google no carregamento do componente
   useEffect(() => {
     async function loadGoogleReviews() {
       try {
@@ -122,94 +178,24 @@ export default function Reviews() {
     loadGoogleReviews();
   }, []);
 
-  // Handles the horizontal scroll translation linking vertical scroll progress
-  useEffect(() => {
-    const onScroll = () => {
-      const el = sectionRef.current;
-      const track = trackRef.current;
-      if (!el || !track) return;
-
-      const rect = el.getBoundingClientRect();
-      const scrollable = rect.height - window.innerHeight;
-      const scrolled = Math.min(Math.max(-rect.top, 0), scrollable);
-      const progress = scrollable > 0 ? scrolled / scrollable : 0;
-
-      // Calculate the maximum translate offset (track width minus window viewport width)
-      const maxScroll = track.scrollWidth - window.innerWidth;
-      
-      if (maxScroll > 0) {
-        setTranslateX(-progress * maxScroll);
-      } else {
-        setTranslateX(0);
-      }
-    };
-
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    window.addEventListener("resize", onScroll);
-    return () => {
-      window.removeEventListener("scroll", onScroll);
-      window.removeEventListener("resize", onScroll);
-    };
-  }, [reviews]);
-
   return (
-    <section ref={sectionRef} id="reviews" className={styles.section}>
-      <div className={styles.sticky}>
-        
+    <section id="reviews" className={styles.section}>
+      <div className={styles.inner}>
+
         {/* Section Header */}
-        <div className={styles.headerContainer}>
-          <div className={styles.header}>
-            <span className={styles.label}>✦ Google Reviews</span>
-            <h2 className={styles.title}>Depoimentos de pacientes.</h2>
-            <p className={styles.lead}>
-              Avaliação média 5.0 no Google, baseada em opiniões reais e verificadas.
-            </p>
-          </div>
+        <div className={styles.header}>
+          <span className={styles.label}>✦ Google Reviews</span>
+          <h2 className={styles.title}>Depoimentos de pacientes.</h2>
+          <p className={styles.lead}>
+            Avaliação média 5.0 no Google, baseada em opiniões reais e verificadas.
+          </p>
         </div>
 
-        {/* Horizontal Slider Track Wrapper */}
-        <div className={styles.trackContainer}>
-          <div
-            ref={trackRef}
-            className={styles.track}
-            style={{ transform: `translateX(${translateX}px)` }}
-          >
-            {reviews.map((review, index) => (
-              <div key={index} className={styles.card}>
-                
-                {/* Card Header: Stars & Verification */}
-                <div className={styles.cardHeader}>
-                  <div className={styles.starsRow}>
-                    {Array.from({ length: review.stars }).map((_, i) => (
-                      <StarIcon key={i} />
-                    ))}
-                  </div>
-                  <div className={styles.verifiedBadge}>
-                    <CheckIcon />
-                    <span>Verificado</span>
-                  </div>
-                </div>
-
-                {/* Card Body: Testimonial Text */}
-                <p className={styles.reviewText}>“{review.text}”</p>
-
-                {/* Card Footer: Client Info & Google Logo */}
-                <div className={styles.cardFooter}>
-                  <div className={styles.clientInfo}>
-                    <span className={styles.clientName}>{review.name}</span>
-                    <span className={styles.clientRole}>
-                      {review.role} • <span className={styles.dateText}>{review.date}</span>
-                    </span>
-                  </div>
-                  <div className={styles.googleIconWrapper}>
-                    <GoogleIcon />
-                  </div>
-                </div>
-
-              </div>
-            ))}
-          </div>
+        {/* Cards Grid */}
+        <div className={styles.grid}>
+          {reviews.map((review, index) => (
+            <ReviewCard key={index} review={review} index={index} />
+          ))}
         </div>
 
       </div>
