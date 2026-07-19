@@ -16,12 +16,12 @@ export default function Home() {
       <Hero />
       <Longevity />
       <PatientCaseVideo />
+      <Reviews />
       <StaticBanner />
       <Diseases />
       <ServiceLocations />
       <AboutDoctor />
       <MissionValues />
-      <Reviews />
       <FAQ />
       <Footer />
     </main>
