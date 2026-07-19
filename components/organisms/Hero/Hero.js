@@ -8,7 +8,9 @@ import styles from "./Hero.module.css";
 export default function Hero({
   subtitle = (
     <>
-      DR. ADILSON SILVESTRE &nbsp;|&nbsp; CRM 31.470 PR
+      DR. ADILSON SILVESTRE
+      <br />
+      CRM 31.470 PR
       <br />
       RQE 31.963
       <br />

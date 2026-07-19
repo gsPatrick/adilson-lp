@@ -75,7 +75,11 @@ export default async function ArticleDetailsPage({ params }) {
                 Dr. Adilson Silvestre
               </p>
               <p className={styles.sidebarText} style={{ fontSize: "12px", marginTop: "4px" }}>
-                Geriatra | CRM 31.470 PR | RQE 31.963
+                Geriatra
+                <br />
+                CRM 31.470 PR
+                <br />
+                RQE 31.963
               </p>
             </div>
             <div className={styles.sidebarCard}>
