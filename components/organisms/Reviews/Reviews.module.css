@@ -1,20 +1,20 @@
 .section {
   position: relative;
-  height: 200vh; /* Slowed down horizontal transition runway matching Services */
+  height: 300vh; /* Runway mais longa para scroll horizontal mais suave */
   background-color: #f7f7f5;
   color: #44615f;
 }
 
 .sticky {
   position: sticky;
-  top: 12.5vh; /* Vertically centered sticky container (75vh height centered in 100vh viewport) */
-  height: 75vh;
+  top: 0;
+  height: 100vh;
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  padding-top: clamp(16px, 2vh, 24px);
-  padding-bottom: clamp(16px, 2vh, 24px);
+  justify-content: center;
+  padding-top: clamp(48px, 8vh, 80px);
+  padding-bottom: clamp(24px, 4vh, 48px);
 }
 
 /* Header Container to align content to page-padding bounds */
@@ -61,13 +61,15 @@
   color: rgba(68, 97, 95, 0.8);
 }
 
-/* Track container */
+/* Track container — overflow hidden é OBRIGATÓRIO para cortar os cards fora do viewport */
 .trackContainer {
   position: relative;
   width: 100%;
-  overflow: visible;
+  overflow: hidden;
   margin-top: clamp(20px, 3.5vh, 40px);
-  margin-bottom: auto;
+  flex: 1;
+  display: flex;
+  align-items: center;
 }
 
 .track {
@@ -76,9 +78,10 @@
   gap: 24px;
   width: max-content;
   padding-left: max(24px, calc((100vw - 1280px) / 2 + 24px));
-  padding-right: 120px;
-  transition: transform 0.1s ease-out;
+  padding-right: max(24px, calc((100vw - 1280px) / 2 + 24px));
+  transition: transform 0.08s ease-out;
   will-change: transform;
+  align-items: stretch;
 }
 
 /* Card design */
@@ -197,14 +200,16 @@
 /* Responsiveness overrides - keeping the scroll animations! */
 @media (max-width: 960px) {
   .sticky {
-    top: 5vh;
-    height: 90vh;
+    top: 0;
+    height: 100vh;
     justify-content: center;
+    padding-top: clamp(32px, 6vh, 64px);
   }
 
   .track {
     gap: 16px;
     padding-left: clamp(20px, 4vw, 48px);
+    padding-right: clamp(20px, 4vw, 48px);
   }
 
   .card {
@@ -221,8 +226,9 @@
 
 @media (max-width: 600px) {
   .sticky {
-    top: 2vh;
-    height: 96vh;
+    top: 0;
+    height: 100vh;
+    padding-top: clamp(24px, 5vh, 48px);
   }
 
   .card {
